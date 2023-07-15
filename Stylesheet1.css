@@ -21,16 +21,16 @@ body, html {
   
   .pic2 {
     background-image: url("Nanga-parbat.jpg");
-    min-height: 400px;
+    min-height: 500px;
   }
   
   .pic3 {
     background-image: url("K2.jpg");
-    min-height: 400px;
+    min-height: 500px;
   }
   .pic4 {
     background-image: url("pic3.jpg");
-    min-height: 400px;
+    min-height: 500px;
   }
   .caption {
     position: absolute;

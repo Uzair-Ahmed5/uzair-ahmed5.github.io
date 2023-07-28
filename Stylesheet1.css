@@ -80,7 +80,13 @@ body, html {
 }
 
 #logo {
-  font-family: "Satisfy";
+  background-image: url(icons/home.png);
+  background-size: cover;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 20px;
+  height: 20px;
 }
 
 #navbar a {

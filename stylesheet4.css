@@ -1,0 +1,110 @@
+body {
+    height: 1000px;
+    width: cover;
+    background: #6D6875;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:#4b4b4b; 
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+  }
+
+#navbar {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 50px 10px;
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    font-family: sans-serif;
+  }
+  
+  
+  #navbar a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  #logo {
+    background-image: url(icons/home.png);
+    background-size: cover;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  #navbar #logo {
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.4s;
+  }
+  
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  #navbar a.active {
+    background-color: #FFB4A2;
+    opacity: 70%;
+    color: rgb(39, 39, 39);
+  }
+  
+  #navbar-right {
+    float: right;
+  }
+  
+  @media screen and (max-width: 580px) {
+    .navbar {
+      width: 100%;
+      height: 50px;
+      padding: 0;
+    }
+    .navbar ul {
+      display: flex;
+      flex-direction: column;
+    }
+    .navbar li {
+      text-align: center;
+    }
+  }
+
+h1 {
+    color: #fff;
+    font-size: 50px;
+    font-family: "Handlee",sans-serif;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    position: absolute;
+    margin: 20px;
+    top: 200px;
+}

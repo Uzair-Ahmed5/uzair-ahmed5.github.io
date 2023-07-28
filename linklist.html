@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <title>Fun Links</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="stylesheet4.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <head>
+        
+    </head>
+    <body>
+        <div id="navbar">
+            <a href="index.html" id="logo"></a>
+            <div id="navbar-right">
+              <a href="index.html">Home</a>
+              <a  href="Contact.html">Contact</a>
+              <a class="active" href="linklist.html">Fun Links</a>
+              <a href="https://pixabay.com/users/uzair_ahmed-20868928/">My Graphic Designs</a>
+            </div>
+          </div>
+        <h1>"Yet I believe the Moon understands what it means to be human, uncertain, alone, created by imperfections."</h1>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "20px 10px";
+    document.getElementById("logo").style.fontSize = "20px";
+  } else {
+    document.getElementById("navbar").style.padding = "50px 10px";
+    document.getElementById("logo").style.fontSize = "35px";
+  }
+}
+function zoomPage() {
+var width = window.innerWidth;
+if (width < 500) {
+document.body.style.zoom = "60%";
+} else {
+document.body.style.zoom = "75%";
+}
+}
+
+window.addEventListener("resize", zoomPage);
+        </script>
+    </body>
+</html>

@@ -2,11 +2,29 @@ body, html {
     margin: 0;
     font: 400 15px/1.8 "Lato", sans-serif;
     color: #777;
+    zoom: 100%;
   }
 
 body {
     height: 3000px;
     background: linear-gradient(25deg, #167fff 0%, #db1f74 51%, #e8cc2c 85%);
+}
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background:#4b4b4b;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #282828;
 }
 .img1, .img2 {
     position: relative;
@@ -78,3 +96,4 @@ body {
   #navbar-right {
     float: right;
   }
+  

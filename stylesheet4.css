@@ -2,6 +2,7 @@ body {
     height: 1000px;
     width: cover;
     background: #6D6875;
+    zoom: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -14,12 +15,12 @@ body {
   }
    
   ::-webkit-scrollbar-thumb {
-    background:#4b4b4b; 
+    background:#4b4b4b;
     border-radius: 20px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #fff;
+    background: #282828;
   }
 
 #navbar {

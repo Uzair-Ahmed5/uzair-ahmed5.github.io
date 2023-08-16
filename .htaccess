@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule ^index$ index [L]
+RewriteRule ^contact$ contact [L]
+RewriteRule ^linklist.html$ linklist [L]

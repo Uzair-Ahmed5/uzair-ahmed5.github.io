@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Glassmorphism</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+html body {
+  height: 97vh;
+}
+
+body {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-image: conic-gradient( from -90deg at 50%, #e9ff70, #ffd670, #ff9770, #ff70a6, #70d6ff);
+ height: 96vh;
+}
+
+.navbar {
+position: absolute;
+right: 0;
+bottom: 0;
+overflow: hidden;
+color: #111;
+padding: 5px;
+z-index: 99;
+            }
+.navbar a {
+font-size: 1.75vw;
+text-decoration: none;
+color: #111;
+padding: 5px;
+text-transform: uppercase;
+font-family: sans-serif;
+}
+.navbar a:hover {
+box-shadow: inset 100px 0 0 0 #111;
+color: #fff;
+}
+
+#card {
+ width: 30vw;
+ height: 40vw;
+ z-index: 2;
+ background: rgba(255, 255, 255, 0.05);
+ box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+ box-shadow: inset 1px 1px 0.12px rgba(255, 255, 255, 0.4),
+   1px 1px 3px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(10px);
+ -webkit-backdrop-filter: blur(10px);
+ border-radius: 10px;
+ border: 1px solid rgba(255, 255, 255, 0.18);
+
+ animation: move 5s ease-in-out infinite;
+ background-clip: padding-box;
+}
+
+h1 {
+ font-family: "satisfy",sans-serif;
+ position: absolute;
+ z-index: 1;
+ font-size: 17vh;
+ color: #fff;
+ opacity: 70%;
+}
+
+@keyframes move {
+ 0% {
+   transform: translateX(-100%);
+ }
+ 50% {
+   transform: translateX(100%);
+ }
+ 100% {
+   transform: translateX(-100%);
+ }
+}
+
+#circle {
+ bottom: 20%;
+ width: 20vw;
+ height: 20vw;
+ background: rgba(255, 255, 255, 0.1);
+ box-shadow: inset 1px 1px 0.12px rgba(255, 255, 255, 0.4),
+   1px 1px 3px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(4px);
+ -webkit-backdrop-filter: blur(4px);
+ border-radius: 50%;
+ border: 1px solid rgba(255, 255, 255, 0.18);
+ position: absolute;
+ animation: move 5s ease-in-out infinite; 
+}
+  </style>
+</head>
+<body>
+
+<div id="card">
+ </div>
+ <h1>Hallucination</h1>
+<div id="circle"></div>
+<div class="navbar">
+  <a class="index" href="experiments.html">index</a>
+  <a class="prev" hidden href="experiments.html"><-prev</a>
+  <a class="next" href="analog-clock.html">next-></a>
+</div>
+</body>
+</html>

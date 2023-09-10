@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+	<title>Digital Clock</title>
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+            html, body {
+                height: 100%;
+            }
+            html body {
+    height: 97vh;
+	background-image: radial-gradient(#ff70db,#8fd2ff);
+}
+.box {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+}
+.container {
+	width: 40vw;
+}
+.clock {
+	height: 100%;
+	width: 100%;
+    color: #ffffff;
+	background-color: rgba(104, 104, 104, 0.5);
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+	padding: 50px 25px;
+	box-shadow: 15px 30px 20px rgba(0, 0, 0, 0.15);
+	border-radius: 25px 25px 25px 25px;
+}
+
+@keyframes move {
+ 0% {
+   transform: rotate(0deg);
+}
+50% {
+    transform: rotate(180deg);
+}
+ 100% {
+    transform: rotate(360deg);
+ }
+}
+.shape1 {
+	height: 150px;
+	width: 150px;
+	position: absolute;
+	background: -o-conic-gradient( #ff5b84, #eb3461);
+	background: conic-gradient(from 135deg, #b0ff5b, #2f8c00);
+	border-radius: 0% 50% 0% 50%;
+	bottom: 50%;
+	right: 20%;
+	z-index: -1;
+    animation: move 5s steps(1000) 0.7s infinite;
+}
+
+.shape2 {
+	height: 200px;
+	width: 200px;
+	position: absolute;
+	background: conic-gradient( from 225deg, #b30b51, #ff36b5);
+	border-radius: 50% 50% 50% 50%;
+	top: 50%;
+	left: 25%;
+	z-index: -1;
+    animation: move 2s steps(1000) infinite reverse;
+    animation-delay: 0.5s;
+}
+
+.wrapper {
+	text-align: center;
+}
+#time {
+	font-size: 50px;
+	display: inline-block;
+    font-family: monospace, sans-serif;
+}
+#day {
+    font-family: "plutur";
+    text-transform: uppercase;
+	position: relative;
+	font-size: 30px;
+	letter-spacing: 0;
+	color: #ffff;
+	text-align: center;
+    text-decoration: none;
+    font-weight: bolder;
+}
+#midday {
+    font-family: "plutur";
+	display: inline-block;
+	font-size: 30px;
+}
+            .navbar {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                overflow: hidden;
+                color: #111;
+                padding: 5px;
+                z-index: 99;
+            }
+            .navbar a {
+                font-size: 1.75vw;
+                text-decoration: none;
+                color: #111;
+                padding: 5px;
+                text-transform: uppercase;
+                font-family: sans-serif;
+            }
+            .navbar a:hover {
+                box-shadow: inset 100px 0 0 0 #111;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="shape1"></div>
+        <div class="shape2"></div>
+        <div class="box">
+            <div class="container">
+                <div class="clock">
+                    <div id="day"></div>
+                    <div class="wrapper">
+                        <div id="time"></div>
+                        <div id="midday"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar">
+            <a class="index" href="experiments.html">index</a>
+            <a class="prev" href="analog-clock.html"><-prev</a>
+            <a class="next"  hidden href="Sliders.html">next-></a>
+        </div>
+        <script>
+            const time = document.getElementById("time");
+        const day = document.getElementById("day");
+        const midday = document.getElementById("midday");
+    
+    let clock = setInterval(
+        function calcTime() {
+            let date_now = new Date();
+            let hr = date_now.getHours();
+            let min = date_now.getMinutes();
+            let sec = date_now.getSeconds();
+            let middayValue = "AM";
+            
+            let days = [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            ];
+    
+            day.textContent = days[date_now.getDay()];
+            
+            middayValue = hr >= 12 ? "PM" : "AM";
+    
+            if (hr == 0) {
+                hr = 12;
+            } else if (hr > 12) {
+                hr -= 12;
+            }
+    
+            hr = hr < 10 ? "0" + hr : hr;
+            min = min < 10 ? "0" + min : min;
+            sec = sec < 10 ? "0" + sec : sec;
+    
+            time.textContent = hr + ":" + min + ":" + sec;
+            midday.textContent = middayValue;
+            }, 
+            
+            1000
+    );
+    </script>
+    </body>
+</html>

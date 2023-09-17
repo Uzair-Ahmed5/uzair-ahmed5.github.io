@@ -10,19 +10,15 @@
             }
             body{
                 background-repeat: no-repeat;
-                background-size: 100%;
                 background-image: conic-gradient( from 270deg at 60%, #000814, #001d3d, #ffc300, #ffd60a);
                 background-size: cover;
-                width: 100%;
-                height: 100%;
                 padding: 0;
                 margin: 0;
             }
             .navbar {
-                position: absolute;
+                position:absolute;
                 right: 0;
                 bottom: 0;
-                overflow: hidden;
                 color: #111;
                 padding: 5px;
                 z-index: 99;
@@ -36,51 +32,56 @@
                 padding: 10px;
                 text-transform: uppercase;
                 font-family: sans-serif;
-                transition: color .2s ease-in-out, box-shadow .2s ease-in-out;
+                transition: all .5s ease-in-out;
             }
             a:hover {
                 box-shadow: inset 300px 0 0 0 #111;
                 color: #fff;
             }
             h1 {
+                box-sizing: border-box;
                 position: absolute;
                 color: #fff ;
                 font-family: "oswald", monospace;
-                font-size: 100px;
+                font-size: 10vw;
                 text-transform: uppercase;
                 z-index: 1;
                 top: 5vh;
                 left:5vh;
             }
             .box2 {
+                box-sizing: border-box;
                 width: 500px;
                 height: 100px;
                 position: absolute;
                 top: 50%;
                 left:0;
                 padding: 30px;
+                margin: 0;
                 text-align: start;
                 text-justify: center;
             }
             h2 {
+                box-sizing: border-box;
                 text-decoration: none;
                 color: #050505;
                 box-sizing: 300px;
                 font-size: 20px;
                 font-family: "oswald", monospace;
                 text-transform: uppercase;
-                letter-spacing: 1px;
             }
         </style>
     </head>
     <body>
         <div class="navbar">
-            <a class="index" href="experiments.html">index</a>
-            <a class="1st" href="Digital_clock.html">Digital Clock</a>
-            <a class="2nd" href="analog-clock.html">Analog Clock</a>
-            <a class="3rd" href="Sliders.html">Hallucination</a>
+            <a class="link" href="login2.html"></a>
+            <a class="link" href="loading-page.html">Loading Page</a>
+            <a class="link" href="Login-page.html">Login Page</a>
+            <a class="link" href="Digital_clock.html">Digital Clock</a>
+            <a class="link" href="analog-clock.html">Analog Clock</a>
+            <a class="link" href="Sliders.html">Hallucination</a>
         </div>
         <h1>Experiments</h1>
-        <div class="box2"><h2>These projects are optimised for PCs and Laptops. Errors might occur on other devices.</h2></div>
+        <div class="box2"><h2>These projects are optimised for PCs and Laptops. Errors might occur on other devices. Rotate your phone to landscape for a better view on phones and tablets.</h2></div>
     </body>
 </html>

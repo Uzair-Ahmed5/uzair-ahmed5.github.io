@@ -1,4 +1,4 @@
-body, html {
+ body, html {
     height: 100%;
     margin: 0;
     font: 400 15px/1.8 "Lato", sans-serif;
@@ -35,20 +35,25 @@ body, html {
   .pic1 {
     background-image: url("pic5.jpg");
     min-height: 100%;
+    image-rendering: optimizeSpeed;
   }
   
   .pic2 {
     background-image: url("Nanga-parbat.jpg");
     min-height: 400px;
+    image-rendering: optimizeSpeed;
   }
   
   .pic3 {
-    background-image: url("K2.jpg");
+    background-image: url("K@.jpg");
     min-height: 400px;
+    image-rendering: optimizeSpeed;
+    filter: hue-rotate(30deg);
   }
   .pic4 {
-    background-image: url("pic3.jpg");
+    background-image: url("https://wallpapercave.com/wp/wp13263056.jpg");
     min-height: 400px;
+    image-rendering: optimizeSpeed;
   }
   .caption {
     position: absolute;

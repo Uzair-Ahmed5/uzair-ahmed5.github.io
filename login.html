@@ -1,0 +1,94 @@
+<?php
+session_start();
+
+// Function to sanitize input
+function sanitize_input($input) {
+    return htmlspecialchars(strip_tags(trim($input)));
+}
+
+// Function to save chat message to file
+function save_chat_message($message) {
+    $file = 'chat_history.txt';
+    $fp = fopen($file, 'a');
+    fwrite($fp, $message . PHP_EOL);
+    fclose($fp);
+}
+
+// Function to load chat history from file
+function load_chat_history() {
+    $file = 'chat_history.txt';
+    if (file_exists($file)) {
+        return file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    }
+    return [];
+}
+
+// Handle message submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['message'])) {
+    $message = sanitize_input($_POST['message']);
+    if (!empty($message)) {
+        $user = $_SESSION['username'] ?? 'Anonymous';
+        $timestamp = date('Y-m-d H:i:s');
+        $message = "[$timestamp] $user: $message";
+        save_chat_message($message);
+    }
+    exit;
+}
+
+// Load chat history
+$chat_history = load_chat_history();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Chat Room</title>
+    <style>
+        #chat-messages {
+            height: 300px;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <h2>Private Chat Room</h2>
+    
+    <div id="chat-messages">
+        <?php foreach ($chat_history as $message): ?>
+            <div><?php echo $message; ?></div>
+        <?php endforeach; ?>
+    </div>
+    
+    <form id="message-form" action="" method="POST">
+        <input type="text" name="message" placeholder="Enter your message" required>
+        <button type="submit">Send</button>
+    </form>
+
+    <script>
+        // Automatically scroll chat messages to bottom
+        var chatMessages = document.getElementById('chat-messages');
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        // Handle form submission via AJAX
+        document.getElementById('message-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var messageInput = document.querySelector('input[name="message"]');
+            var message = messageInput.value.trim();
+            if (message !== '') {
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', window.location.href, true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                        messageInput.value = '';
+                        chatMessages.innerHTML += '<div>' + message + '</div>';
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    }
+                };
+                xhr.send('message=' + encodeURIComponent(message));
+            }
+        });
+    </script>
+</body>
+</html>

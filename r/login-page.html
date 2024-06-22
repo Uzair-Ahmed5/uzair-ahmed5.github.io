@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Login Page 2</title>
+<meta name="viewport" content="device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="https://pngimg.com/uploads/google/google_PNG19635.png">
+<head>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+    @property --rotate {
+        syntax: "<angle>";
+        initial-value: 132deg;
+        inherits: false;
+    }
+    :root {
+        --card-height: 70vh;
+        --card-width: calc(var(--card-height) / 1.5);
+    }
+        body{
+            width: 100%;
+            height: 100%;
+            background: #d0d0d0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 5rem;
+            margin: 0;
+        }
+        .navbar {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            color: #111;
+            padding: 5px;
+            z-index: 90;
+        }
+        .navbar a {
+            font-size: 1.75vw;
+            text-decoration: none;
+            color: #444;
+            padding: 5px;
+            text-transform: uppercase;
+            font-family: sans-serif;
+        }
+        .navbar a:hover {
+            box-shadow: inset 100px 0 0 0 #444;
+            border-radius: 10px 10px 0 0;
+            color: #fff;
+            transition: all .5s ease;
+        }
+        .container {
+            background-size: 100%;
+        }
+        .shape1 {
+            position: absolute;
+            top: 20%;
+            right: 20%;
+            height: 10vw;
+            width: 10vw;
+            background: #d0d0d0;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        .shape1::before {
+            content: "";
+            width: 120%;
+            height: 120%;
+            border-radius: 50%;
+            background-image: conic-gradient(from var(--rotate), #264653, #2a9d8f, #e9c46a, #f4a261, #e76f51, #264653);
+            position: absolute;
+            z-index: -5;
+            animation: spin1 2s steps(120) infinite reverse;
+        }
+        .shape2{
+            position: absolute;
+            height: 15vw;
+            width: 15vw;
+            background: linear-gradient(180deg,rgba(255, 186, 47, 0.42) 31.77%,#f19a5c 100%);
+            box-sizing: border-box;
+            animation: move1 60s infinite alternate;
+            z-index: 99;
+            transition: 3s cubic-bezier(0.07, 0.8, 0.16, 1);
+        }
+        .shape2:hover{
+            -webkit-filter: blur(30px);
+            filter: blur(30px);
+            box-shadow:
+            inset 0 0 0 5px rgba(255,255,255, 0.6),
+            inset 60px 60px 0 0px #fa709a,
+            inset 80px 80px 0 0px #784ba8,
+            inset 100px 100px 0 0px #2b86c5;
+        }
+        @keyframes move1 {
+            0% {
+                transform: translate(-300px, -100px) rotate(-100deg);
+                border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+            }
+            33% {
+                transform: translate(100px, 100px) rotate(-200deg);
+                border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+            }
+            66% {
+                transform: translate(500px, -200px) rotate(-300deg);
+                border-radius: 65% 15% 45% 57% / 20% 19% 37% 95%;
+            }
+            100% {
+                transform: translate(-300px, -100px) rotate(-100deg);
+                border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+            }
+        }
+        .shape3 {
+            position: absolute;
+            height: 16vw;
+            width: 16vw;
+            background: linear-gradient(#ff010141, #ff3939d8);
+            box-sizing: border-box;
+            animation: move2 50s infinite alternate;
+            transition: 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        .shape3:hover {
+            -webkit-filter: blur(20px);
+            filter: blur(20px);
+            box-shadow:
+            inset 0 0 0 5px rgba(255,255,255, 0.6),
+            inset 50px 50px 0 0px #e7ad30,
+            inset 75px 75px 0 0px #a6f461,
+            inset 100px 100px 0 0px #00c3ff;
+        }
+        @keyframes move2 {
+            0% {
+                transform: translate(300px, 100px) rotate(100deg);
+                border-radius: 15% / 20%;
+            }
+            33% {
+                transform: translate(-100px, -100px) rotate(200deg);
+                border-radius: 25% / 30%;
+            }
+            66% {
+                transform: translate(-500px, 200px) rotate(300deg);
+                border-radius: 35% / 40%;
+            }
+            100% {
+                transform: translate(-300px, -100px) rotate(-100deg);
+                border-radius: 45% / 50%;
+            }
+        }
+        .card {
+            position: absolute;
+            background: #d0d0d0;
+            width: var(--card-width);
+            height: var(--card-height);
+            padding: .3vw;
+            position: relative;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            cursor: pointer;
+        }
+        .card::before {
+            content: "";
+            width: 104%;
+            height: 102%;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px #444;
+            background-image: conic-gradient(from var(--rotate), #ffad00 0%, #01c5c4, #e7305b, #ffad00);
+            position: absolute;
+            z-index: -1;
+            top: -1%;
+            left: -2%;
+            animation: spin1 2s steps(120) infinite;
+        }
+        .card::after {
+            position: absolute;
+            content:"";
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            margin: 0 auto;
+            transform: scale(0.8);
+            filter: blur(calc(var(--card-height) / 4));
+            mix-blend-mode: multiply;
+            background-image: conic-gradient(from var(--rotate), #ffad00 0%, #01c5c4, #e7305b, #ffad00);
+            opacity: 1;
+            transition: opacity .5s;
+            animation: spin1 2s steps(120) infinite;
+        }
+        @keyframes spin1 {
+            0% {
+                --rotate: 0deg;
+            }
+            100% {
+                --rotate: 360deg;
+            }
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            color: #444;
+            font-size: 1.5vw;
+        }
+        .lgn {
+            position: absolute;
+            top: 2vw;
+            left: 0;
+            right: 0;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: monospace;
+            font-size: 20px;
+            padding-bottom: .3vw;
+            border-bottom: 2px solid #444;
+        }
+        .form input {
+            height: 1vw;
+            width: 90%;
+            margin-bottom: 5px;
+            color: #444;
+            background-color: #d0d0d0;
+            border-radius: 10px;
+            border: none;
+            padding: 5px;
+            text-decoration: none;
+            box-shadow:inset -1px -2px 5px #444;
+        }
+        .form label {
+            font-size: 12px;
+            font-family: monospace;
+            padding-bottom: 10px;
+            margin: 0;
+            text-decoration: none;
+        }
+        .buttons {
+            position: absolute;
+            bottom: 10%;
+        }
+        button {
+            position: relative;
+            text-align: center;
+            width: 8vw;
+            height: 4vw;
+            margin-left: 1vw;
+            margin-right: 1vw;
+            border-radius: 1vw;
+            color: #fff;
+            border:none;
+            background: #e7305b;
+            text-transform: uppercase;
+            font-family: monospace;
+            font-size: 1.3vw;
+            box-shadow: 1px 1px 5px #444;
+        }
+        button:active {
+            box-shadow: inset 1px 1px 5px #444;
+            top: 2px;
+            left: 2px;
+            transition: all 1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a class="index" href="experiments">index</a>
+        <a class="prev" href="Digital_clock"><-prev</a>
+        <a class="next" href="loading-page">next-></a>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="form">
+                    <div class="lgn">Log-in</div>
+                    <label class="email">email</label>
+                    <input type="email" name="" required="">
+                    <label class="pass">password</label>
+                    <input type="password" name="" required="">
+            </div>
+            <div class="buttons">
+                <button class="Log-btn" type="submit">Log-in</button>
+                <button class="sign-up" type="submit">sign-up</button>
+            </div>
+        </div>
+    </div>
+    <div class="shape1"></div>
+    <div class="shape2"></div>
+    <div class="shape3"></div>
+<script>
+</script>          
+</body>
+</html>

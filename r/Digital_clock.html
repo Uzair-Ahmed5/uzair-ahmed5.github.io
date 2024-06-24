@@ -3,150 +3,114 @@
 <meta charset="utf-8">
 <title>Digital Clock</title>
 <meta name="viewport" content="device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&family=Satisfy+12&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="https://pngimg.com/uploads/google/google_PNG19635.png">
 <head>
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Satisfy:wght@200&display=swap');
-html, body {
-height: 100%;
-width: 100%;
-}
-body {
-background: #444;
-margin: 0;
-padding: 0;
-}
-.box {
-position: absolute;
-transform: translate(-50%, -50%);
-top: 50%;
-left: 50%;
-}
-.container {
-width: 40vw;
-}
-.clock {
-height: 100%;
-width: 100%;
-color: #ffffff;
-background-color: rgba(104, 104, 104, 0.5);
--webkit-backdrop-filter: blur(20px);
-backdrop-filter: blur(20px);
-padding: 50px 25px;
-box-shadow: 15px 30px 20px rgba(0, 0, 0, 0.15);
-border-radius: 25px 25px 25px 25px;
-}
-
-@keyframes move {
-0% {
-transform: rotate(0deg);
-}
-50% {
-transform: rotate(180deg);
-}
-100% {
-transform: rotate(360deg);
-}
-}
-@keyframes spin {
-0% {
-transform: rotate(0deg);
-}
-100% {
-transform: rotate(360deg);
-}
-}
-.shape1 {
-display: flex;
-justify-content: center;
-align-items: center;
-height: 150px;
-width: 150px;
-position: absolute;
-background: transparent;
-border-radius: 50%;
-top: 50%;
-left: 50%;
-translate: 50% 50%;
-z-index: -1;
-animation: spin 60s steps(60) infinite;
-border: 5px solid #6caeff;
-}
-.lin1 {
-translate: 0 -40px;
-height: 75px;
-width: 5px;
-background: linear-gradient(#6caeff, #ff6cf8, #ff6cf8);
-}
-.shape2 {
-height: 200px;
-width: 200px;
-position: absolute;
-background: conic-gradient( from 225deg, #00a830, #444);
-border-radius: 50% 50% 50% 50%;
-top: 50%;
-left: 25%;
-z-index: -1;
-animation: move 1s steps(30) infinite reverse;
-animation-delay: 0.5s;
-}
-
-.wrapper {
-text-align: center;
-}
-#time {
-font-size: 50px;
-display: inline-block;
-font-family: monospace, sans-serif;
-}
-#day {
-font-family: "plutur", "satisfy", -apple-system;
-text-transform: uppercase;
-position: relative;
-font-size: 80px;
-letter-spacing: 0;
-color: #ffff;
-text-align: center;
-text-decoration: none;
-font-weight: bolder;
-}
-#midday {
-font-family: "plutur";
-display: inline-block;
-font-size: 30px;
-}
-.navbar {
-position: absolute;
-right: 0;
-bottom: 0;
-overflow: hidden;
-color: #111;
-padding: 5px;
-z-index: 99;
-}
-.navbar a {
-font-size: 18px;
-text-decoration: none;
-color: #111;
-padding: 5px;
-text-transform: uppercase;
-font-family: sans-serif;
-}
-.navbar a:hover {
-box-shadow: inset 100px 0 0 0 #111;
-color: #fff;
-transition: all .5s ease;
-}
-    </style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Satisfy:wght@200&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&family=Jacquard+12&display=swap');
+        html, body {
+        height: 100%;
+        width: 100%;
+        }
+        body {
+        background: #ededed;
+        margin: 0;
+        padding: 0;
+        }
+        .box {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        }
+        .container {
+        width: 40vw;
+        }
+        .clock {
+        height: 100%;
+        width: 100%;
+        color: #000000;
+        background-color: #ededed;
+        padding: 50px 25px;
+        box-shadow: inset 9px 10px 15px -4px rgba(0,0,0,0.1);
+        border-radius: 25px 25px 25px 25px;
+        animation: move 10s steps(350) infinite alternate;
+        }
+        .clock #day {
+            color:#111;
+        }
+        @keyframes move {
+        0% {
+            box-shadow: inset 9px 10px 15px -4px rgba(0,0,0,0.1);
+        }
+        50% {
+            box-shadow: none;
+        }
+        100% {
+            box-shadow: 9px 10px 15px -4px rgba(0,0,0,0.1);
+        }
+        }
+        @keyframes spin {
+        0% {
+        transform: rotate(0deg);
+        }
+        100% {
+        transform: rotate(360deg);
+        }
+        }
+        .wrapper {
+        text-align: center;
+        }
+        #time {
+        font-size: 50px;
+        display: inline-block;
+        font-family: Gayathri, sans-serif;
+        }
+        #day {
+        font-family: "Gayathri", monospace;
+        text-transform: uppercase;
+        position: relative;
+        font-size: 80px;
+        letter-spacing: 0;
+        color: #111;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bolder;
+        }
+        #midday {
+        font-family: "Gayathri";
+        display: inline-block;
+        font-size: 30px;
+        }
+        .navbar {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        color: #111;
+        padding: 5px;
+        z-index: 99;
+        }
+        .navbar a {
+        font-size: 18px;
+        text-decoration: none;
+        color: #111;
+        padding: 5px;
+        text-transform: uppercase;
+        font-family: sans-serif;
+        }
+        .navbar a:hover {
+        box-shadow: inset 100px 0 0 0 #111;
+        color: #fff;
+        transition: all .5s ease;
+        }
+</style>
 </head>
 <body>
-    <div class="shape1">
-        <div class="circle"></div>
-        <div class="lin1">
-        </div>
-    </div>
-    <div class="shape2"></div>
     <div class="box">
         <div class="container">
             <div class="clock">

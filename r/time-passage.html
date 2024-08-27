@@ -19,11 +19,12 @@
         height: 100%;
         width: 100%;
         background-color: #ffffff;
+        overflow-x: hidden;
     }
     .bar {
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 1vw;
+        right: 1vw;
         z-index: 99;
     }
     button {
@@ -50,7 +51,7 @@
         z-index: 99;
     }
     .navbar a {
-        font-size: 1.75vw;
+        font-size: 20px;
         text-decoration: none;
         color: #111;
         padding: 5px;
@@ -67,13 +68,13 @@
         position: absolute;
         top: 10px;
         left: 10px;
-        width: 600px;
+        width: 40vw;
         height: auto;
         background-color: transparent;
         color: #F46C68;
     }
     #time {
-        font-size: 150px;
+        font-size: 10vw;
         font-weight: 800;
         font-family: 'Orbitron';
         text-align: center;
@@ -81,10 +82,10 @@
     }
     #day {
         position: relative;
-        top: -40px;
+        top: -3vw;
         text-align: center;
         letter-spacing: 0px;
-        font-size: 50px;
+        font-size: 4vw;
         font-family: 'Saira Extra Condensed';
     }
     .shape {
@@ -92,109 +93,70 @@
         top: 50%;
         left: 50%;
         translate: -50% -50%;
-        width: 200px;
-        height: 200px;
+        width: 15vw;
+        height: 15vw;
         border-radius: 50%;
         background-color: #F46C68;
         z-index: 0;
     }
     .container {
         position: absolute;
-        right: 0;
         top: 0;
-        height: 100%;
-        width: 50%;
+        right: 0;
         background: transparent;
-        backdrop-filter: blur(25px);
-        z-index: 1;
+        width: 50%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        backdrop-filter: blur(2vw);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .wrap {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        translate: -50% -50%;
-        width: auto;
+        background: transparent;
         height: auto;
+        width: 70%;
+        text-wrap: wrap;
     }
     .quotes {
-        text-align: justify;
-        width: 100%;
-        height: 100%;
+        text-align: center;
         color: #252525;
-        font-size: 50px;
+        font-size: 4vw;
         font-family: "Nanum Brush Script";
-        padding: 50px;
-    }
-    .type-2 {
-        text-align: justify;
-        width: 100%;
-        height: 100%;
-        color: #F46C68;
-        font-size: 50px;
-        font-family: "Nanum Brush Script";
-        padding: 50px;
     }
     @media only screen and (max-device-width: 500px) {
-        body {
-            height: 100%;
-            width: 100%;
-            padding: 0;
-            margin: 0;
-            background: #999;
-            overflow: hidden;
-        }
         .time-capsule {
             position: absolute;
-            top: 40px;
-            left: 10px;
-            width: 100%;
+            top: 5vh;
+            left: 50%;
+            translate: -50% 0;
+            width: 40vh;
             height: auto;
             background-color: transparent;
             color: #F46C68;
         }
         #time {
-            font-size: 100px;
-            font-weight: 800;
-            font-family: 'Orbitron';
-            text-align: center;
+            font-size: 10vh;
         }
         #day {
-            position: relative;
-            top: -20px;
-            font-size: 50px;
+            font-size: 4vh;
         }
         .shape {
-            width: 150px;
-            height: 150px;
+            width: 15vh;
+            height: 15vh;
+        }
+        .quotes {
+            font-size: 4vh;
         }
         .container {
             position: absolute;
             bottom: 0;
-            right: 0;
+            left: 0;
             translate: 0 100%;
+            background: transparent;
+            width: 100%;
             height: 50%;
-            width: 100%;
-            background: #ffffff90;
-            backdrop-filter: blur(25px);
-            z-index: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .wrap {
-            height: auto;
-            width: auto;
-        }
-        .quotes {
-            width: 100%;
-            height: 100%;
-            color: #252525;
-            font-size: 40px;
-            font-family: "Nanum Brush Script";
-            padding: 50px;
-        }
-        .type-2 {
-            content: '';
         }
     }
 </style>
@@ -215,7 +177,7 @@
     <div class="shape"></div>
     <div class="container">
         <div class="wrap">
-            <div class="quotes" id="quotes-display">Some quotes</div>
+            <div class="quotes" id="quotes-display"></div>
         </div>
     </div>
     <div class="navbar">

@@ -1,357 +1,257 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="https://pngimg.com/uploads/google/google_PNG19635.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
-    <title>Simple Calculator</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Monoton&family=New+Amsterdam&display=swap');
-        html, body {
-            overflow-x: hidden;
-            height: 100%;
-            width: 100%;
-            padding: 0;
-            margin: 0;
-        }
-        body{
-            background-repeat: no-repeat;
-            background: #B1B5C3;
-            background-size: cover;
-            font-family: New Amsterdam;
-        }
-        .calculator {
-            width: 350px;
-            height: 570px;
-            margin: 40px auto 0;
-            padding: 10px;
-            background-color: #e8e8e9;
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 5px 5px 5px -2px #0000001a,inset 5px 5px 5px -2px #ffffff90;
-        }
-        .cn1 {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-        .result {
-            width: 90%;
-            border-radius: 15px 15px 0 0;
-            height: 120px;
-            border: none;
-            box-shadow: inset 5px 10px 20px -10px #11111190;
-            color: #FF8901;
-            font-size: 100px;
-            font-family: New Amsterdam;
-        }
-        .cont {
-            width: 100%;
+    <link rel="icon" type="image/png" href="https://pngimg.com/uploads/google/google_PNG19635.png"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <title>Cool Time</title>
+<head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nanum+Brush+Script&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&family=Jacquard+12&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+    ::selection {
+        color: #ffffff;
+        background: #F46C68;
+    }
+    html {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        height: 100%;
+        width: 100%;
+        background-color: #ffffff;
+        overflow-x: hidden;
+    }
+    .bar {
+        position: absolute;
+        top: 1vw;
+        right: 1vw;
+        z-index: 99;
+    }
+    button {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid #dddddd;
+        background-color: #fff;
+        color: #F46C68;
+        box-shadow: 5px 5px 10px -9px #111;
+    }
+    .navbar {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        width: auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 5px;
+        padding-left: 20px;
+        border-radius: 10px 0 0 0;
+        background-color: #F46C68bb;
+        z-index: 99;
+    }
+    .navbar a {
+        font-size: 20px;
+        text-decoration: none;
+        color: #111;
+        padding: 5px;
+        text-transform: uppercase;
+        font-family: sans-serif;
+        font-weight: 100;
+        transition: all .25s ease;
+    }
+    .navbar a:hover {
+        transition: all .25s ease;
+        color: #fff;
+    }
+    .time-capsule {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 40vw;
+        height: auto;
+        background-color: transparent;
+        color: #F46C68;
+    }
+    #time {
+        font-size: 10vw;
+        font-weight: 800;
+        font-family: 'Orbitron';
+        text-align: center;
+        letter-spacing: -1px;
+    }
+    #day {
+        position: relative;
+        top: -3vw;
+        text-align: center;
+        letter-spacing: 0px;
+        font-size: 4vw;
+        font-family: 'Saira Extra Condensed';
+    }
+    .shape {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        width: 15vw;
+        height: 15vw;
+        border-radius: 50%;
+        background-color: #F46C68;
+        z-index: 0;
+    }
+    .container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: transparent;
+        width: 50%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        backdrop-filter: blur(2vw);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .wrap {
+        background: transparent;
+        height: auto;
+        width: 70%;
+        text-wrap: wrap;
+    }
+    .quotes {
+        text-align: center;
+        color: #252525;
+        font-size: 4vw;
+        font-family: "Nanum Brush Script";
+    }
+    @media only screen and (max-device-width: 500px) {
+        .time-capsule {
+            position: absolute;
+            top: 5vh;
+            left: 50%;
+            translate: -50% 0;
+            width: 40vh;
             height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: transparent;
+            color: #F46C68;
         }
-        .numpad {
-            width: auto;
-            display: grid;
-            gap: 20px;
-            grid-template-columns: 4;
-            grid-template-rows: 5;
+        #time {
+            font-size: 10vh;
         }
-        .clear {
-            grid-column: 1;
-            grid-row: 1;
-            background-color: #B1B5C3;
+        #day {
+            font-size: 4vh;
         }
-        .delete {
-            grid-column: 4;
-            grid-row: 1;
-            background-color: #FF8901;
+        .shape {
+            width: 15vh;
+            height: 15vh;
         }
-        .multi {
-            grid-column: 3;
-            grid-row: 1;
-            background-color: #B1B5C3;
+        .quotes {
+            font-size: 4vh;
         }
-        .divide {
-            grid-column: 2;
-            grid-row: 1;
-            font-weight: 1000;
-            background-color: #B1B5C3;
-        }
-        .num-1 {
-            grid-column: 1;
-            grid-row: 4;
-        }
-        .num-2 {
-            grid-column: 2;
-            grid-row: 4;
-        }
-        .num-3 {
-            grid-column: 3;
-            grid-row: 4;
-        }
-        .add {
-            grid-column: 4;
-            grid-row: 2;
-            background-color: #FF8901;
-        }
-        .num-4 {
-            grid-column: 1;
-            grid-row: 3;
-        }
-        .num-5 {
-            grid-column: 2;
-            grid-row: 3;
-        }
-        .num-6 {
-            grid-column: 3;
-            grid-row: 3;
-        }
-        .subt {
-            grid-column: 4;
-            grid-row: 3;
-            background-color: #FF8901;
-        }
-        .num-7 {
-            grid-column: 1;
-            grid-row: 2;
-        }
-        .num-8 {
-            grid-column: 2;
-            grid-row: 2;
-        }
-        .num-9 {
-            grid-column: 3;
-            grid-row: 2;
-        }
-        .equal {
-            grid-column: 4;
-            grid-row: 4 / span 2;
-            height: auto;
-            background-color: #FF8901;
-        }
-        .zero {
-            grid-column: 1 / span 2;
-            grid-row: 5;
-            width: auto;
-        }
-        .dot {
-            grid-column: 3;
-            grid-row: 5;
-            font-weight: 1000;
-        }
-        input {
-            width: 100%;
-            margin: 5px 0;
-            padding: 10px;
-            font-size: 18px;
-        }
-        .nn {
-            color: #252525;
-        }
-        .gg {
-            background-color: #818590;
-            box-shadow: 5px 5px 5px -2px #0000001f,inset 5px 5px 5px -2px #ffffff90;
-        }
-        .bar {
-            display: flex;
-            flex-direction: row;
+        .container {
             position: absolute;
             bottom: 0;
             left: 0;
-            color: #252525;
-            height: auto;
-            width: auto;
-            margin: 20px;
+            translate: 0 100%;
+            background: transparent;
+            width: 100%;
+            height: 50%;
         }
-        .btn-1 {
-            width: 50px;
-            height: 50px;
-            color: #252525;
-            margin: 20px;
-        }
-        button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 60px;
-            height: 60px;
-            font-size: 20px;
-            border-radius: 20px;
-            color: #F3F4F8;
-            border: none;
-            box-shadow: 5px 5px 5px -2px #0000001f,inset 5px 5px 5px -2px #ffffff90;
-            transition: all .1s ease;
-        }
-        button:active {
-            position: relative;
-            bottom: -2px;
-            right: -2px;
-            box-shadow: 5px 5px 5px -5px #0000001f,inset 5px 5px 5px -2px #ffffff90;
-        }
-        @media only screen and (max-device-width: 500px) {
-            .calculator {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                translate: -50% -70%;
-                width: 250px;
-                height: 425px;
-            }
-            .result {
-                height: 80px;
-                font-size: 50px;
-            }
-            .bar {
-                margin: 10px;
-            }
-            .btn-1 {
-                width: 30px;
-                height: 30px;
-                margin: 10px;
-            }
-            button {
-                width: 40px;
-                height: 40px;
-                border-radius: 13px;
-            }
-        }
-        .navbar {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
-            width: auto;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-right: 5px;
-            padding-left: 20px;
-            border-radius: 10px 0 0 0;
-            background-color: #FF8901bb;
-            z-index: 99;
-        }
-        .navbar a {
-            font-size: 20px;
-            text-decoration: none;
-            color: #111;
-            padding: 5px;
-            text-transform: uppercase;
-            font-family: sans-serif;
-            font-weight: 100;
-            transition: all .25s ease;
-        }
-        .navbar a:hover {
-            transition: all .25s ease;
-            color: #fff;
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
+    <div class="bar">
+        <button class="btn1" onclick="bright()"><span class="material-symbols-outlined">
+            light_mode
+            </span></button>
+        <button class="btn2" onclick="dark()"><span class="material-symbols-outlined">
+            dark_mode
+            </span></button>
+    </div>
+    <div class="time-capsule">
+            <div id="time"></div>
+            <div id="day"></div>
+    </div>
+    <div class="shape"></div>
+    <div class="container">
+        <div class="wrap">
+            <div class="quotes" id="quotes-display"></div>
+        </div>
+    </div>
     <div class="navbar">
         <a class="index link" href="https://uzair-ahmed5.github.io/r/experiments">index</a>
-        <a class="prev link" href="time-passage"><-prev</a>
-        <a class="next link" href="#" hidden>next-></a>
+        <a class="prev link" href="https://uzair-ahmed5.github.io/r/loading-page"><-prev</a>
+        <a class="next link" href="calculator">next-></a>
     </div>
-    <div class="bar">
-        <button onclick="light()" class="btn-1" id="light"><span class="material-symbols-outlined">light_mode</span></button>
-        <button onclick="dark()" class="btn-1" id="dark"><span class="material-symbols-outlined">dark_mode</span></button>
-    </div>
-    <div class="calculator">
-        <div class="cn1">
-            <input type="text" class="result" id="result" disabled>
-        </div>
-        <br>
-        <div class="cont">
-            <div class="numpad">
-                <button class="gg clear" onclick="clearResult()">C</button>
-                <button class="gg divide" onclick="appendOperator('/')">/</button>
-                <button class="gg multi" onclick="appendOperator('*')"><span class="material-symbols-outlined">close</span></button></button>
-                <button class="rr delete" onclick="deleteLast()"><span class="material-symbols-outlined">backspace</span></button></button>
-                <button class="nn num-1" onclick="appendNumber('1')">1</button>
-                <button class="nn num-2" onclick="appendNumber('2')">2</button>
-                <button class="nn num-3" onclick="appendNumber('3')">3</button>
-                <button class="rr add" onclick="appendOperator('+')"><span class="material-symbols-outlined">add</span></button>
-                <button class="nn num-4" onclick="appendNumber('4')">4</button>
-                <button class="nn num-5" onclick="appendNumber('5')">5</button>
-                <button class="nn num-6" onclick="appendNumber('6')">6</button>
-                <button class="rr subt" onclick="appendOperator('-')"><span class="material-symbols-outlined">remove</span></button></button>
-                <button class="nn num-7" onclick="appendNumber('7')">7</button>
-                <button class="nn num-8" onclick="appendNumber('8')">8</button>
-                <button class="nn num-9" onclick="appendNumber('9')">9</button>
-                <button class="rr equal" onclick="calculateResult()"><span class="material-symbols-outlined">equal</span></button></button>
-                <button class="nn zero" onclick="appendNumber('0')">0</button>
-                <button class="nn dot" onclick="appendOperator('.')">.</button>
-            </div>
-        </div>
-    </div>
+<script>
+    function bright() {
+            document.body.style.backgroundColor = '#ffffff';
+            document.querySelector('.btn1').style.backgroundColor = '#ffffff';
+            document.querySelector('.btn2').style.backgroundColor = '#ffffff';
+            document.querySelector('.quotes').style.color = '#252525';
+    }
+    function dark() {
+            document.body.style.backgroundColor = '#252525';
+            document.querySelector('.btn1').style.backgroundColor = '#252525';
+            document.querySelector('.btn2').style.backgroundColor = '#252525';
+            document.querySelector('.quotes').style.color = '#ffffff';
+    }
+    const time = document.getElementById('time');
+    const day = document.getElementById("day");
+    const midday = document.getElementById('midday');
+    let clock = setInterval(
+        function calcTime() {      let date_now = new Date();
+        let hr = date_now.getHours();
+        let min = date_now.getMinutes();
+        let middayValue = "AM";
+        
+        let days = [
+            "SUN",
+            "MON",
+            "TUE",
+            "WED",
+            "THU",
+            "FRI",
+            "SAT"
+        ];
 
-    <script>
-        function dark() {
-            document.body.style.backgroundColor = '#51555D';
-            document.querySelector('.calculator').style.backgroundColor = '#393D44';
+        day.textContent = days[date_now.getDay()];
 
-            let numColor = document.querySelectorAll('.nn');
-            numColor.forEach(element => {
-            element.style.backgroundColor = '#818590';});
-            numColor.forEach(element => {
-            element.style.color = '#fff';});
+        hr = hr < 10 ? "0" + hr : hr;
+        min = min < 10 ? "0" + min : min;
 
-            let gColor = document.querySelectorAll('.gg');
-            gColor.forEach(element => {
-            element.style.backgroundColor = '#41454C';});
-
-            let rColor = document.querySelectorAll('.rr');
-            rColor.forEach(element => {
-            element.style.backgroundColor = '#FF8901';});
-        };
-        function light() {
-            document.body.style.backgroundColor = '#B1B5C3';
-            document.querySelector('.calculator').style.background = '#e8e8e9';
-
-            let numColor = document.querySelectorAll('.nn');
-            numColor.forEach(element => {
-            element.style.backgroundColor = '#F3F4F8';});
-            numColor.forEach(element => {
-            element.style.color = '#252525';});
-
-            let gColor = document.querySelectorAll('.gg');
-            gColor.forEach(element => {
-            element.style.backgroundColor = '#818590';});
-
-            let rColor = document.querySelectorAll('.rr');
-            rColor.forEach(element => {
-            element.style.backgroundColor = '#FF8901';});
-        };
-
-        let result = document.getElementById('result');
-
-        function appendNumber(number) {
-            result.value += number;
+        time.textContent = hr + ':' + min;
+        }, 
+        
+        1000
+);
+    const quotes = [
+                "웃음은 최고의 명약이다",
+                "병 주고 약 준다",
+                "될성부른 나무는 떡잎부터 알아본다",
+                "가재는 게 편이다",
+                "원숭이도 나무에서 떨어질 때가 있다",
+                "개구리 올챙이 적 생각도 못 한다",
+                "굴러온 돌이 박힌 돌 빼낸다 ",
+                "아는 길도 물어가라 ",
+                "등잔 밑이 어둡다",
+                "해안이 보이지 않는 것을 이겨낼 용기가 없다면 절대로 바다를 건널 수 없다",
+                "개떡같이 말해도 찰떡같이 알아듣는다",
+                "서당 개 삼 년에 풍월한다 ",
+                "시간은 금이다",
+            ];
+    function displayRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quotes-display').innerText = quotes[randomIndex];
         }
-
-        function appendOperator(operator) {
-            result.value += operator;
-        }
-
-        function clearResult() {
-            result.value = '';
-        }
-
-        function deleteLast() {
-            result.value = result.value.slice(0, -1);
-        }
-
-        function calculateResult() {
-            try {
-                result.value = eval(result.value);
-            } catch (e) {
-                result.value = 'Error';
-            }
-        }
-    </script>
+        setInterval(displayRandomQuote, 60000);
+        displayRandomQuote();
+</script>
 </body>
 </html>

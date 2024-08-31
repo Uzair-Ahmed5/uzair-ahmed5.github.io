@@ -12,38 +12,89 @@
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Satisfy:wght@200&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&family=Jacquard+12&display=swap');
-        html, body {
+    :root {
+        ---grey: #ededed;
+        ---black: #252525;
+        ---dnyWidth: calc(100% - 20%);
+    }
+    * {
+        color: var(---black);
+    }
+    html{
+        height: 100%;
+        overflow-x: hidden;
+        }
+    body {
+        background-color: var(---grey);
         height: 100%;
         width: 100%;
-        }
-        body {
-        background: #ededed;
-        margin: 0;
         padding: 0;
+        margin: 0;
         }
-        .box {
-        position: absolute;
-        transform: translate(-50%, -50%);
+    .navbar {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        background: #aaa;
+        color: #252525;
+        padding: 5px;
+        margin: 0;
+        z-index: 99;
+        }
+    .navbar a {
+        font-size: 18px;
+        text-decoration: none;
+        color: #111;
+        padding: 5px;
+        text-transform: uppercase;
+        font-family: sans-serif;
+        }
+    .navbar a:hover {
+        box-shadow: inset 100px 0 0 0 #111;
+        color: #fff;
+        transition: all .5s ease;
+    }
+    .box {
+        position: fixed;
         top: 50%;
         left: 50%;
-        }
-        .container {
-        width: 40vw;
-        }
-        .clock {
-        height: 100%;
-        width: 100%;
-        color: #000000;
-        background-color: #ededed;
-        padding: 50px 25px;
-        box-shadow: inset 9px 10px 15px -4px rgba(0,0,0,0.1);
-        border-radius: 25px 25px 25px 25px;
+        translate: -50% -50%;
+        background: var(---grey);
+        color: var(---black);
+        width: 500px;
+        height: 300px;
+        border: 1px solid #25252520;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: inset 9px 10px 15px -4px #0000001a;
         animation: move 10s steps(350) infinite alternate;
-        }
-        .clock #day {
-            color:#111;
-        }
-        @keyframes move {
+        padding: 0;
+        margin: 0;
+    }
+    .day {
+        font-size: 100px;
+        font-family: "Gayathri", monospace;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .time {
+        font-size: 50px;
+        font-family: "Gayathri", monospace;
+        padding-right: 10px;
+    }
+    .midday {
+        font-family: "Gayathri", monospace;
+        font-size: 30px;
+        padding-left: 10px;
+    }
+    @keyframes move {
         0% {
             box-shadow: inset 9px 10px 15px -4px rgba(0,0,0,0.1);
         }
@@ -52,80 +103,45 @@
         }
         100% {
             box-shadow: 9px 10px 15px -4px rgba(0,0,0,0.1);
+        }}
+    @media only screen and (max-width: 900px){
+        .box {
+            width: 350px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+        .day{
+            font-size: 50px;
         }
-        @keyframes spin {
-        0% {
-        transform: rotate(0deg);
+        .time {
+            font-size: 30px;
+            font-family: "Gayathri", monospace;
+            padding-right: 5px;
         }
-        100% {
-        transform: rotate(360deg);
+        .midday {
+            font-family: "Gayathri", monospace;
+            font-size: 20px;
+            padding-left: 5px;
         }
-        }
-        .wrapper {
-        text-align: center;
-        }
-        #time {
-        font-size: 50px;
-        display: inline-block;
-        font-family: Gayathri, sans-serif;
-        }
-        #day {
-        font-family: "Gayathri", monospace;
-        text-transform: uppercase;
-        position: relative;
-        font-size: 80px;
-        letter-spacing: 0;
-        color: #111;
-        text-align: center;
-        text-decoration: none;
-        font-weight: bolder;
-        }
-        #midday {
-        font-family: "Gayathri";
-        display: inline-block;
-        font-size: 30px;
-        }
-        .navbar {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        overflow: hidden;
-        color: #111;
-        padding: 5px;
-        z-index: 99;
-        }
-        .navbar a {
-        font-size: 18px;
-        text-decoration: none;
-        color: #111;
-        padding: 5px;
-        text-transform: uppercase;
-        font-family: sans-serif;
-        }
-        .navbar a:hover {
-        box-shadow: inset 100px 0 0 0 #111;
-        color: #fff;
-        transition: all .5s ease;
-        }
+    }
 </style>
 </head>
 <body>
     <div class="box">
-        <div class="container">
-            <div class="clock">
-                <div id="day"></div>
-                <div class="wrapper">
-                    <div id="time"></div>
-                    <div id="midday"></div>
-                </div>
-            </div>
+        <div class="clock">
+            <div id="day" class="day"></div>
+            <span class="wrapper">
+                <div id="time" class="time"></div>
+                <div id="midday" class="midday"></div>
+            </span>
         </div>
     </div>
     <div class="navbar">
         <a class="index" href="experiments">index</a>
         <a class="prev" href="analog-clock"><-prev</a>
-        <a class="next" href="login-page">next-></a>
+        <a class="next" href="Login-page">next-></a>
     </div>
     <script>
         const time = document.getElementById("time");

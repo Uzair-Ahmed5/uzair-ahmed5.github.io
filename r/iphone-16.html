@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 16</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        :root {
+            ---height: 603px;
+            ---width: 292px;
+        }
+        body {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background:#DCDFF9;
+            background-size: cover;
+            overflow-y: scroll;
+        }
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+        }
+        .frame {
+            height: var(---height);
+            width: var(---width);
+            z-index: 1;
+            background: linear-gradient(#B6BCF2, #7175B8);
+            border-radius: 50px;
+            box-shadow: 5px 5px 30px -15px#252525;
+        }
+        .screen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            height: 580px;
+            width: 265px;
+            z-index: 2;
+            background-image: url(https://wallpapercave.com/wp/wp14418806.jpeg);
+            background-size: 100%;
+            border-radius: 39px;
+            border: 5px solid #252525;
+        }        
+        .island {
+            position: absolute;
+            top: 21px;
+            left: 50%;
+            translate: -50% 0;
+            height: 26px;
+            width: 85px;
+            z-index: 3;
+            background: #252525;
+            border-radius: 55px;
+        }
+        .action-btn {
+            position: absolute;
+            top: 124.5px;
+            left: -3px;
+            height: 30px;
+            width: 3px;
+            z-index: 1;
+            background: linear-gradient(#e7dfff 0% 0%, #9a79fd 20% 95%);
+            border-radius: 2px 0 0 2px;
+        }
+        .vol-up-btn {
+            position: absolute;
+            top: 173.5px;
+            left: -3px;
+            height: 47px;
+            width: 3px;
+            z-index: 1;
+            background: linear-gradient(#e7dfff 0% 0%, #9a79fd 20% 95%);
+            border-radius: 2px 0 0 2px;
+        }
+        .vol-down-btn {
+            position: absolute;
+            top: 231.5px;
+            left: -3px;
+            height: 47px;
+            width: 3px;
+            z-index: 1;
+            background: linear-gradient(#e7dfff 0% 0%, #9a79fd 20% 95%);
+            border-radius: 2px 0 0 2px;
+        }
+        .lock-btn {
+            position: absolute;
+            top: 189px;
+            right: -3px;
+            height: 73px;
+            width: 3px;
+            z-index: 1;
+            background: linear-gradient(#e7dfff 0% 0%, #9a79fd 20% 95%);
+            border-radius: 0 2px 2px 0;
+        }
+        .logo {
+            position: fixed;
+            top: 256px;
+            left: 115px;
+            opacity: 10%;
+        }
+        img {
+            height: 80px;
+            width: auto;
+            mix-blend-mode: multiply;
+        }
+        .cam-island {
+            opacity: 100%;
+            mix-blend-mode: multiply;
+            position: fixed;
+            top: 13px;
+            left: 13px;
+            height: 160px;
+            width: 88px;
+            background: #6538D6;
+            border-radius: 55px;
+            box-shadow: 5px 5px 15px -10px #252525, inset 5px 5px 5px -5px #fff;
+            display: flex;
+            flex-direction: column;
+        }
+        .cam-1 {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            background: #ced2fb;
+            height: 65px;
+            width: 65px;
+            border-radius: 50%;
+            box-shadow: 5px 5px 15px -10px #252525;
+        }
+        .cam-2 {
+            position: fixed;
+            top: 96px;
+            left: 24px;
+            background: #ced2fb;
+            height: 65px;
+            width: 65px;
+            border-radius: 50%;
+            box-shadow: 5px 5px 15px -10px #252525;
+        }
+        .lens {
+            margin: 4px 5px 5px 5px;
+            background: linear-gradient(45deg, #444, #252525);
+            height: 56px;
+            width: 56px;
+            border-radius: 50%;
+        }
+        .lidar {
+            margin: 78px 5px 0 71px;
+            background-color: #25252590;
+            height: 4px;
+            width: 4px;
+            border-radius: 50%;
+        }
+        .flash {
+            position: fixed;
+            top: 80px;
+            left: 112px;
+            background: #ededed;
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+        }
+        .controls {
+            position: fixed;
+            top: 30px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .colors {
+            position: fixed;
+            top: 30px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;            
+        }
+        .btn {
+            background: #ededed;
+            box-shadow: 5px 5px 15px -10px #252525;
+            border: 1px solid #999;
+            height: 50px;
+            width: 100px;
+            font-size: 15px;
+            border-radius: 55px;
+            margin: 10px;
+            font-family: sans-serif;
+        }
+        .btn:active {
+            position: relative;
+            top: 2px;
+            left: 2px;
+            transition: all .25s ease;
+            box-shadow: none;
+        }
+        .frame, .cam-island, .cam-1, .cam-2, body {
+            transition: background 5s ease, background-color 0.5s ease;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="fr btn" onclick="showFront()">See Front</button>
+        <button class="bk btn" onclick="showBack()">See Back</button>
+    </div>
+    <div class="colors">
+        <button class="green btn" onclick="green()">Teal</button>
+        <button class="green btn" onclick="pink()">Pink</button>
+        <button class="green btn" onclick="ultramarine()">Ultramarine</button>
+        <button class="green btn" onclick="white()">White</button>
+        <button class="green btn" onclick="black()">Black</button>
+    </div>
+    <div class="box">
+        <div class="frame">
+            <div class="front" hidden>
+                <div class="screen"></div>
+                <div class="island"></div>
+                <div class="action-btn"></div>
+                <div class="vol-up-btn"></div>
+                <div class="vol-down-btn"></div>
+                <div class="lock-btn"></div>
+            </div>
+            <div class="back-side">
+                <div class="logo"><img class="logo1" src="https://logopng.com.br/logos/apple-4.png"></div>
+                <div class="flash"></div>
+                <div class="cam-island">
+                    <div class="cam-1"><div class="lens"></div></div>
+                    <div class="lidar"></div>
+                    <div class="cam-2"><div class="lens"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const frontside = document.querySelector('.front');
+        const backside = document.querySelector('.back-side');
+        function showBack() {
+            document.querySelector('.back-side').style.display = 'block';
+            document.querySelector('.front').style.display = 'none';
+        }
+        function showFront() {
+            document.querySelector('.front').style.display = 'block';
+            document.querySelector('.back-side').style.display = 'none';
+        }
+        function green() {
+            document.querySelector('.frame').style.background = 'linear-gradient(#BFD7D4, #87AFB0)';
+            document.querySelector('.cam-island').style.backgroundColor = '#3F6873';
+            document.querySelector('.cam-1').style.backgroundColor = '#BFD7D4';
+            document.querySelector('.cam-2').style.backgroundColor = '#BFD7D4';
+            document.body.style.background = '#D9E7E6';
+        }
+        function pink() {
+            document.querySelector('.frame').style.background = 'linear-gradient(#EDB9DA, #D283B8)';
+            document.querySelector('.cam-island').style.backgroundColor = '#C74899';
+            document.querySelector('.cam-1').style.backgroundColor = '#EDB9DA';
+            document.querySelector('.cam-2').style.backgroundColor = '#EDB9DA';
+            document.body.style.background = '#F7DFEE';
+        }
+        function ultramarine() {
+            document.querySelector('.frame').style.background = 'linear-gradient(#B6BCF2, #7175B8)';
+            document.querySelector('.cam-island').style.backgroundColor = '#6538D6';
+            document.querySelector('.cam-1').style.backgroundColor = '#ced2fb';
+            document.querySelector('.cam-2').style.backgroundColor = '#ced2fb';
+            document.body.style.background = '#DCDFF9';
+        }
+        function white() {
+            document.querySelector('.frame').style.background = 'linear-gradient(#F3F3F3, #EFEFED)';
+            document.querySelector('.cam-island').style.backgroundColor = '#E8E8E8';
+            document.querySelector('.cam-1').style.backgroundColor = '#F3F3F3';
+            document.querySelector('.cam-2').style.backgroundColor = '#F3F3F3';
+            document.body.style.background = '#CCCCCC';
+        }
+        function black() {
+            document.querySelector('.frame').style.background = 'linear-gradient(#595959, #3E3E3E)';
+            document.querySelector('.cam-island').style.backgroundColor = '#343434';
+            document.querySelector('.cam-1').style.backgroundColor = '#A1A1A1';
+            document.querySelector('.cam-2').style.backgroundColor = '#A1A1A1';
+            document.body.style.background = '#B8B8B8';
+        }
+    </script>
+</body>
+</html>

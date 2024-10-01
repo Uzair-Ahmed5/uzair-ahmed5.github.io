@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/png" href="https://pngimg.com/uploads/google/google_PNG19635.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <title>Simple Calculator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Monoton&family=New+Amsterdam&display=swap');
+        html, body {
+            overflow-x: hidden;
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-repeat: no-repeat;
+            background: #B1B5C3;
+            background-size: cover;
+            font-family: New Amsterdam;
+        }
+        .calculator {
+            width: 350px;
+            height: 570px;
+            margin: 40px auto 0;
+            padding: 10px;
+            background-color: #e8e8e9;
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 5px 5px 5px -2px #0000001a,inset 5px 5px 5px -2px #ffffff90;
+        }
+        .cn1 {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .result {
+            width: 90%;
+            border-radius: 15px 15px 0 0;
+            height: 120px;
+            border: none;
+            box-shadow: inset 5px 10px 20px -10px #11111190;
+            color: #FF8901;
+            font-size: 100px;
+            font-family: New Amsterdam;
+        }
+        .cont {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .numpad {
+            width: auto;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 4;
+            grid-template-rows: 5;
+        }
+        .clear {
+            grid-column: 1;
+            grid-row: 1;
+            background-color: #B1B5C3;
+        }
+        .delete {
+            grid-column: 4;
+            grid-row: 1;
+            background-color: #FF8901;
+        }
+        .multi {
+            grid-column: 3;
+            grid-row: 1;
+            background-color: #B1B5C3;
+        }
+        .divide {
+            grid-column: 2;
+            grid-row: 1;
+            font-weight: 1000;
+            background-color: #B1B5C3;
+        }
+        .num-1 {
+            grid-column: 1;
+            grid-row: 4;
+        }
+        .num-2 {
+            grid-column: 2;
+            grid-row: 4;
+        }
+        .num-3 {
+            grid-column: 3;
+            grid-row: 4;
+        }
+        .add {
+            grid-column: 4;
+            grid-row: 2;
+            background-color: #FF8901;
+        }
+        .num-4 {
+            grid-column: 1;
+            grid-row: 3;
+        }
+        .num-5 {
+            grid-column: 2;
+            grid-row: 3;
+        }
+        .num-6 {
+            grid-column: 3;
+            grid-row: 3;
+        }
+        .subt {
+            grid-column: 4;
+            grid-row: 3;
+            background-color: #FF8901;
+        }
+        .num-7 {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        .num-8 {
+            grid-column: 2;
+            grid-row: 2;
+        }
+        .num-9 {
+            grid-column: 3;
+            grid-row: 2;
+        }
+        .equal {
+            grid-column: 4;
+            grid-row: 4 / span 2;
+            height: auto;
+            background-color: #FF8901;
+        }
+        .zero {
+            grid-column: 1 / span 2;
+            grid-row: 5;
+            width: auto;
+        }
+        .dot {
+            grid-column: 3;
+            grid-row: 5;
+            font-weight: 1000;
+        }
+        input {
+            width: 100%;
+            margin: 5px 0;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .nn {
+            color: #252525;
+        }
+        .gg {
+            background-color: #818590;
+            box-shadow: 5px 5px 5px -2px #0000001f,inset 5px 5px 5px -2px #ffffff90;
+        }
+        .bar {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            color: #252525;
+            height: auto;
+            width: auto;
+            margin: 20px;
+        }
+        .btn-1 {
+            width: 50px;
+            height: 50px;
+            color: #252525;
+            margin: 20px;
+        }
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            border-radius: 20px;
+            color: #F3F4F8;
+            border: none;
+            box-shadow: 5px 5px 5px -2px #0000001f,inset 5px 5px 5px -2px #ffffff90;
+            transition: all .1s ease;
+        }
+        button:active {
+            position: relative;
+            bottom: -2px;
+            right: -2px;
+            box-shadow: 5px 5px 5px -5px #0000001f,inset 5px 5px 5px -2px #ffffff90;
+        }
+        @media only screen and (max-device-width: 900px) {
+            .calculator {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                translate: -50% -70%;
+                width: 250px;
+                height: 425px;
+            }
+            .result {
+                height: 80px;
+                font-size: 50px;
+            }
+            .bar {
+                margin: 10px;
+            }
+            .btn-1 {
+                width: 30px;
+                height: 30px;
+                margin: 10px;
+            }
+            button {
+                width: 40px;
+                height: 40px;
+                border-radius: 13px;
+            }
+        }
+        .navbar {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            width: auto;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 5px;
+            padding-left: 20px;
+            border-radius: 10px 0 0 0;
+            background-color: #FF8901bb;
+            z-index: 99;
+        }
+        .navbar a {
+            font-size: 20px;
+            text-decoration: none;
+            color: #111;
+            padding: 5px;
+            text-transform: uppercase;
+            font-family: sans-serif;
+            font-weight: 100;
+            transition: all .25s ease;
+        }
+        .navbar a:hover {
+            transition: all .25s ease;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a class="index link" href="https://uzair-ahmed5.github.io/r/experiments">index</a>
+        <a class="prev link" href="time-passage"><-prev</a>
+        <a class="next link" href="loading1">next-></a>
+    </div>
+    <div class="bar">
+        <button onclick="light()" class="btn-1" id="light"><span class="material-symbols-outlined">light_mode</span></button>
+        <button onclick="dark()" class="btn-1" id="dark"><span class="material-symbols-outlined">dark_mode</span></button>
+    </div>
+    <div class="calculator">
+        <div class="cn1">
+            <input type="text" class="result" id="result" disabled>
+        </div>
+        <br>
+        <div class="cont">
+            <div class="numpad">
+                <button class="gg clear" onclick="clearResult()">C</button>
+                <button class="gg divide" onclick="appendOperator('/')">/</button>
+                <button class="gg multi" onclick="appendOperator('*')"><span class="material-symbols-outlined">close</span></button></button>
+                <button class="rr delete" onclick="deleteLast()"><span class="material-symbols-outlined">backspace</span></button></button>
+                <button class="nn num-1" onclick="appendNumber('1')">1</button>
+                <button class="nn num-2" onclick="appendNumber('2')">2</button>
+                <button class="nn num-3" onclick="appendNumber('3')">3</button>
+                <button class="rr add" onclick="appendOperator('+')"><span class="material-symbols-outlined">add</span></button>
+                <button class="nn num-4" onclick="appendNumber('4')">4</button>
+                <button class="nn num-5" onclick="appendNumber('5')">5</button>
+                <button class="nn num-6" onclick="appendNumber('6')">6</button>
+                <button class="rr subt" onclick="appendOperator('-')"><span class="material-symbols-outlined">remove</span></button></button>
+                <button class="nn num-7" onclick="appendNumber('7')">7</button>
+                <button class="nn num-8" onclick="appendNumber('8')">8</button>
+                <button class="nn num-9" onclick="appendNumber('9')">9</button>
+                <button class="rr equal" onclick="calculateResult()"><span class="material-symbols-outlined">equal</span></button></button>
+                <button class="nn zero" onclick="appendNumber('0')">0</button>
+                <button class="nn dot" onclick="appendOperator('.')">.</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function dark() {
+            document.body.style.backgroundColor = '#51555D';
+            document.querySelector('.calculator').style.backgroundColor = '#393D44';
+
+            let numColor = document.querySelectorAll('.nn');
+            numColor.forEach(element => {
+            element.style.backgroundColor = '#818590';});
+            numColor.forEach(element => {
+            element.style.color = '#fff';});
+
+            let gColor = document.querySelectorAll('.gg');
+            gColor.forEach(element => {
+            element.style.backgroundColor = '#41454C';});
+
+            let rColor = document.querySelectorAll('.rr');
+            rColor.forEach(element => {
+            element.style.backgroundColor = '#FF8901';});
+        };
+        function light() {
+            document.body.style.backgroundColor = '#B1B5C3';
+            document.querySelector('.calculator').style.background = '#e8e8e9';
+
+            let numColor = document.querySelectorAll('.nn');
+            numColor.forEach(element => {
+            element.style.backgroundColor = '#F3F4F8';});
+            numColor.forEach(element => {
+            element.style.color = '#252525';});
+
+            let gColor = document.querySelectorAll('.gg');
+            gColor.forEach(element => {
+            element.style.backgroundColor = '#818590';});
+
+            let rColor = document.querySelectorAll('.rr');
+            rColor.forEach(element => {
+            element.style.backgroundColor = '#FF8901';});
+        };
+
+        let result = document.getElementById('result');
+
+        function appendNumber(number) {
+            result.value += number;
+        }
+
+        function appendOperator(operator) {
+            result.value += operator;
+        }
+
+        function clearResult() {
+            result.value = '';
+        }
+
+        function deleteLast() {
+            result.value = result.value.slice(0, -1);
+        }
+
+        function calculateResult() {
+            try {
+                result.value = eval(result.value);
+            } catch (e) {
+                result.value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>

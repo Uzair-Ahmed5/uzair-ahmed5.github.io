@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" name="viewport" content="width=device-width; initial-scale=1.0"/>
+<link rel="icon" type="image/png" href="https://pngimg.com/uploads/google/google_PNG19635.png">
+<title>Loading Animation</title>
+<style>
+    :root {
+        --bg-color: #ffad00;
+        --yellow: #ffad00;
+        --blue: #01c5c4;
+        --peach: #ffa5a5;
+        --purple: #d789d7;
+        --pink: #f09ae9;
+        --red: #e7305b;
+        --black: #303960;
+        --mainTheme: #ececec;
+    }
+    body{
+        display: block;
+        background: var(--mainTheme);
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .bboxa {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        z-index: 999;
+    }
+    .bbox1 {
+        height: auto;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+    .lab {
+        height: 150px;
+        width: 30px;
+        box-shadow:-10px -10px 15px #ffffff4d, 10px 10px 15px #46464626, inset -10px -10px 15px #ffffff4d, inset 10px 10px 15px #46464626;
+        border: 15px solid var(--mainTheme);
+        border-radius: 40px;
+        margin: 15px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+    .cab {
+        background: var(--bg-color);
+        height: 100%;
+        width: 100%;
+        box-shadow: inset -10px -10px 15px #ffffff4d, inset 10px 10px 15px #46464626;;
+        border-radius: 40px;
+        transition: all 1s ease;
+    }
+    .cab1 {
+        animation: upDown 1s ease-in-out infinite alternate-reverse;
+    }
+    .cab2 {
+        animation: upDown 1s ease-in-out .25s infinite alternate-reverse;
+    }
+    .cab3 {
+        animation: upDown 1s ease-in-out .5s infinite alternate-reverse;
+    }
+    .cab4 {
+        animation: upDown 1s ease-in-out .75s infinite alternate-reverse;
+    }
+    .cab5 {
+        animation: upDown 1s ease-in-out 1s infinite alternate-reverse;
+    }
+    @keyframes upDown {
+        0% {
+            height: 100%;
+        }
+        100% {
+            height: 0%;
+        }
+    }
+    .btns {
+        height: auto;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+    .btn {
+        height: 30px;
+        width: 30px;
+        box-shadow:-10px -10px 15px #ffffff4d, 10px 10px 15px #46464626, inset -10px -10px 15px #ffffff4d, inset 10px 10px 15px #46464626;
+        border: 10px solid var(--mainTheme);
+        border-radius: 50%;
+        margin: 20px;
+        transition: all 0.15s ease;
+    }
+    .btn:active {
+        scale: 0.9;
+    }
+    .btn1 {
+        background: var(--yellow);
+    }
+    .btn2 {
+        background: var(--blue);
+    }
+    .btn3 {
+        background: var(--peach);
+    }
+    .btn4 {
+        background: var(--pink);
+    }
+    .btn5 {
+        background: var(--purple);
+    }
+    .btn6 {
+        background: var(--red);
+    }
+    .btn7 {
+        background: var(--black);
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+    .hdd1 {
+        font-size: 50px;
+        color: var(--bg-color);
+        font-family: Oswald;
+        font-weight: 800;
+        transition: all 1s ease;
+    }
+    @media only screen and (max-width: 900px) {
+        .lab {
+            width: 20px;
+            border: 10px solid var(--mainTheme);
+            margin: 10px;
+        }
+        .btns div {
+            height: 20px;
+            width: 20px;
+            border: 5px solid var(--mainTheme);
+            margin: 5px;
+        }
+        .hdd1 {
+            font-size: 30px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="bboxa">
+        <p class="hdd1">Loading Animation</p>
+        <div class="bbox1">
+            <div class="lab lab1"><div class="cab cab1"></div></div>
+            <div class="lab lab2"><div class="cab cab2"></div></div>
+            <div class="lab lab3"><div class="cab cab3"></div></div>
+            <div class="lab lab4"><div class="cab cab4"></div></div>
+            <div class="lab lab5"><div class="cab cab5"></div></div>
+        </div>
+        <div class="btns">
+            <div class="btn btn1" onclick="changeColor('var(--yellow)')"></div>
+            <div class="btn btn2" onclick="changeColor('var(--blue)')"></div>
+            <div class="btn btn3" onclick="changeColor('var(--peach)')"></div>
+            <div class="btn btn4" onclick="changeColor('var(--pink)')"></div>
+            <div class="btn btn5" onclick="changeColor('var(--purple)')"></div>
+            <div class="btn btn6" onclick="changeColor('var(--red)')"></div>
+            <div class="btn btn7" onclick="changeColor('var(--black)')"></div>
+        </div>
+    </div>
+<script>
+    const bg = document.documentElement;
+    const changeColor = (bgColor) => {
+        bg.style.setProperty('--bg-color', bgColor)
+    };
+</script>
+</body>
+</html>

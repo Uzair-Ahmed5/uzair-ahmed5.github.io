@@ -35,7 +35,7 @@
         flex-direction: column;
         height: 100%;
         width: 100%;
-        z-index: 999;
+        z-index: 9;
     }
     .bbox1 {
         height: auto;
@@ -154,9 +154,44 @@
             font-size: 30px;
         }
     }
+    
+    .navbar {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        width: auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 5px;
+        padding-left: 20px;
+        border-radius: 10px 0 0 0;
+        background-color: var(--bg-color);
+        z-index: 99;
+        transition: all .5s ease;
+    }
+    .navbar a {
+        font-size: 20px;
+        text-decoration: none;
+        color: #111;
+        padding: 5px;
+        text-transform: uppercase;
+        font-family: sans-serif;
+        font-weight: 100;
+        transition: all .25s ease;
+    }
+    .navbar a:hover {
+        transition: all .25s ease;
+        color: #fff;
+    }
 </style>
 </head>
 <body>
+    <div class="navbar">
+        <a class="index link" href="https://uzair-ahmed5.github.io/r/experiments">index</a>
+        <a class="prev link" href="https://uzair-ahmed5.github.io/r/calculator"><-prev</a>
+        <a hidden class="next link" href="calculator">next-></a>
+    </div>
     <div class="bboxa">
         <p class="hdd1">Loading Animation</p>
         <div class="bbox1">

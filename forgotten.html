@@ -27,7 +27,7 @@
         color: #171717;
         padding: 0;
         margin: 0;
-        display: flex;
+        display: inline-block;
     }
     .preloader {
         height: 100%;
@@ -87,6 +87,8 @@
     }
 
     h3, h2 {
+        color: #171717;
+        text-align: center;
         font-size: 50px;
         font-family: var(--font1);
     }
@@ -97,24 +99,21 @@
         font-size: 20px;
         color: #353535;
         word-wrap: break-word;
+        text-align: justify;
     }  
     @media only screen and (max-width: 768px) {
         .loading-txt {
             font-size: 30px;
         }
-
         .loader {
             width: 200px;
         }
-
         .content {
             padding: 10px;
         }
-
         h3, h2 {
             font-size: 30px;
         }
-
         .subtext {
             font-size: 16px;
         }
@@ -153,7 +152,3 @@
 </script>
 </body>
 </html>
-
-<!--
-https://script.google.com/macros/s/AKfycbzuBBscHWlhuNCdomUohIdkwZSMHw3iOruANwDTNYiHS058ky1Y4icl5502i5oujcNe/exec
--->

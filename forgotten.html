@@ -15,6 +15,18 @@
     :root {
         --font1: 'soriasoria';
         --font2: 'Aktura-Regular';
+        --color1: #1b1e3a;
+        --color2: #fff4d5;
+        --brown: #f0f2f4;
+        --brown2: #89796d;
+        --teal: #eff1e4;
+        --teal2: #0b545d;
+        --pink: #dfcac3;
+        --pink2: #cd5e78;
+        --colorPale: #d8c9ae;
+        --colorPale2: #575757;
+        --colorMint: #a1d1b1;
+        --colorMint2: #1c2529;
     }
     body {
         position: absolute;
@@ -23,8 +35,8 @@
         overflow-x: hidden;
         height: 100%;
         width: 100%;
-        background: #FDFFFC;
-        color: #171717;
+        background: var(--color2);
+        color: var(--color1);
         padding: 0;
         margin: 0;
         display: inline-block;
@@ -35,7 +47,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background: #fdfffc;
+        background: var(--color2);
         display: flex;
         flex-direction: column;
         place-content: center;
@@ -46,26 +58,26 @@
     }
     .loading-txt {
         position: relative;
-        color: #171717;
+        color: var(--color1);
         font-family: var(--font2);
         font-size: 50px;
         padding: 0;
         margin: 20px;
     }
     .loader {
-        background: #fdfffc;
+        background: var(--color2);
         height: 10px;
         width: 250px;
         overflow: hidden;
         border-radius: 20px;
-        border: 2px solid #171717;
+        border: 2px solid var(--color1);
         display: flex;
         justify-content: center;
     }
     .inner-loader {
         height: 100%;
         width: 30%;
-        background: #171717;
+        background: var(--color1);
         border-radius: 20px;
         animation: move1 1s ease-in-out infinite alternate-reverse;
     }
@@ -87,7 +99,7 @@
     }
 
     h3, h2 {
-        color: #171717;
+        color: var(--color1);
         text-align: center;
         font-size: 50px;
         font-family: var(--font1);
@@ -97,7 +109,7 @@
         width: 90%;
         font-family: oswald;
         font-size: 20px;
-        color: #353535;
+        color: var(--color1);
         word-wrap: break-word;
         text-align: justify;
     }  
@@ -106,16 +118,17 @@
             font-size: 30px;
         }
         .loader {
-            width: 200px;
+            height: 5px;
+            width: 150px;
         }
         .content {
-            padding: 10px;
+            padding: 0;
         }
         h3, h2 {
             font-size: 30px;
         }
         .subtext {
-            font-size: 16px;
+            font-size: 20px;
         }
     }
 

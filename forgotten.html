@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" name="viewport" content="width=device-width; initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
@@ -27,7 +28,6 @@
         padding: 0;
         margin: 0;
         display: flex;
-        flex-wrap: wrap;
     }
     .preloader {
         height: 100%;
@@ -80,9 +80,12 @@
     .content {
         margin: 0 auto;
         height: auto;
-        width: 90%;
-        padding: 50px auto;
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px;
+        box-sizing: border-box;
     }
+
     h3, h2 {
         font-size: 50px;
         font-family: var(--font1);
@@ -93,7 +96,30 @@
         font-family: oswald;
         font-size: 20px;
         color: #353535;
+        word-wrap: break-word;
     }  
+    @media (max-width: 768px) {
+        .loading-txt {
+            font-size: 30px;
+        }
+
+        .loader {
+            width: 200px;
+        }
+
+        .content {
+            padding: 10px;
+        }
+
+        h3, h2 {
+            font-size: 30px;
+        }
+
+        .subtext {
+            font-size: 16px;
+        }
+    }
+
 </style>
 </head>
 <body>

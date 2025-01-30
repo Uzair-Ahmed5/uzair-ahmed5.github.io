@@ -267,8 +267,7 @@
     }
     const font = (font1, font2) => {
         bg.style.setProperty('--default-heading', font1);
-        bg.style.setProperty('--default-text', font2);
-        localStorage.setItem('font', JSON.stringify({font1, font2}));        
+        bg.style.setProperty('--default-text', font2);    
     }
     const loadTheme = () => {
         const theme = JSON.parse(localStorage.getItem('theme', 'font'));

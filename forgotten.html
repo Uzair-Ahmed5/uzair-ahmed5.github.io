@@ -267,14 +267,20 @@
         bg.style.setProperty('--color1', clr2);
         localStorage.setItem('theme', JSON.stringify({clr1, clr2}));
     }
-    /* 
+    /*
+    const font = (font1, font2) => {
+        bg.style.setProperty('--default-heading', font1);
+        bg.style.setProperty('--default-text', font2);
+        localStorage.setItem('font', JSON.stringify({font1, font2}));        
+    } 
+    */
     const loadTheme = () => {
         const theme = JSON.parse(localStorage.getItem('theme', 'font'));
         if (theme) {
             bg.style.setProperty('--color2', theme.clr1);
             bg.style.setProperty('--color1', theme.clr2);
         }
-    } */
+    }
 
     async function fetchContent() {
         try {

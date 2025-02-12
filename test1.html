@@ -1,180 +1,162 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8" name="viewport" content="width:device-width, initital-scale: 1.0">
-<title>Uzair Ahmed</title>
-<link rel="icon" type="image/jpg" href="https://i.pinimg.com/564x/6a/8d/d1/6a8dd115cc6d60b45a7ff8659d43edef.jpg">
-<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Carrois+Gothic+SC&family=Charm:wght@400;700&family=Henny+Penny&family=Indie+Flower&family=Lobster&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Sofia&display=swap" rel="stylesheet">
+<title>102</title>
+<link rel="icon" type="image/png" href="https://pngimg.com/uploads/google/google_PNG19635.png"/>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Foldit:wght@300&family=Great+Vibes&family=Monoton&family=Orbitron:wght@400;900&display=swap');
-    html {
-        cursor: crosshair;
-    }
     body {
+        background: #f0ebe3;
         height: 100%;
         width: 100%;
         padding: 0;
         margin: 0;
-        background: fixed center url(https://wallpapercave.com/wp/wp11834761.jpg);
-        background-size: cover;
+        overflow-x: hidden;
     }
-    h1 {
-        font-size: 100px;
-        color: #ffffff;
-        text-align: center;
-        text-transform: capitalize;
-        font-family: "great vibes", "satisfy";
-        mix-blend-mode: lighten;
-    }
-    .card {
-        position: relative;
-        top: 300px;
-        height: auto;
-        width: 700px;
-        background: #8989898f;
-        backdrop-filter: blur(20px);
-        border-radius: 20px;
-        margin: 10px auto;
-        padding: 20px;
-    }
-    .heading {
-        color: #fff;
-        font-size: 30px;
-        font-family: "orbit", sans-serif;
-        font-weight: 1000;
-        padding-bottom: 5px;
-        border-bottom: 3px solid #fff;
-        letter-spacing: 1px;
-    }
-    .sub {
-        color: #fff;
-        font-size: 20px;
-        font-family: monospace, sans-serif;
-        font-weight: 500;
-        padding-bottom: 5px;
-        text-align: justify;
-        text-justify: distribute;
-    }
-    .lit {
-      text-decoration: none;
-      color: #fff;
-      font-size: 20px;
-      font-family: monospace, sans-serif;
-      font-weight: 500;
-      padding-bottom: 5px;
-  }
-    @media screen and (max-width: 1000px) {
-        #blob {
-            visibility: hidden;
-        }
-        .card .heading {
-            font-size: 40px;
-        }
-        .card .sub {
-            font-size: 30px;
-            padding: 5px;
-        }
-        .box1 {
-            display: inline-block;
-            text-align: justify;
-            width: 99%;
-        }
-    }
-    #blob {
-        height: 50px;
-        width: 50px;
+    .loader {
+        background: #f0ebe3;
         position: fixed;
+        top: 50%;
+        left: 50%;
         translate: -50% -50%;
-        border-radius: 50%;
-        background: #fff;
-        mix-blend-mode: difference;
-        opacity: 1;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+        z-index: 999;
+    }
+    .loader .bar {
+        height: 10px;
+        background: #bcbcbc;
+        width: 100%;
+        max-width: 300px;
+        min-width: 200px;
+        margin: 0;
+        padding: 0;
+        border-radius: 50px;
+        overflow: hidden;
+        box-shadow: 5px 5px 10px -4px #111111;
+    }
+    .bar .loading1 {
+        background: #000000;
+        width: 100%;
+        height: 100%;
+        animation: move1 6s ease-in-out 0.5s 1;
+        border-radius: 50px;
+    }
+    @keyframes move1 {
+        0% {
+            width: 0%;
+        } 100% {
+            width: 100%;
+        }
+    }
+    main {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         z-index: 1;
     }
-    ::-webkit-scrollbar {
-        width: 15px;
+    .head1 {
+        font-family: Charm, sans-serif;
+        font-size: 150px;
+        color: #800000;
     }
-    ::-webkit-scrollbar-track {
-        background: #b23dff;
+    .mainImage {
+        position: fixed;
+        height: 400px;
+        width: auto;
+        opacity: 100%;
+        transform: scale(2);
     }
-    ::-webkit-scrollbar-thumb {
-        background: #ffffffe1;
+    .image1 {
+        z-index: 3;
+        translate: -50% 0 ;
+        transition: all 4s ease;
     }
-    ::-webkit-scrollbar-thumb:hover {
-        background: #ebc0ff;
+    .image2 {
+        z-index: 2;
+        translate: 50% 0;
+        transition: all 3s ease;
     }
-    ::-webkit-scrollbar-button {
-        height: 20px;
-        background: #bb00ff;
+    .image3 {
+        translate: 0 50%;
+        z-index: 1;
+        transition: all 3s ease;
     }
-    a {
-        text-decoration: none;
-        cursor: crosshair;
-        z-index: 10;
+    .section-2 {
+        background: #d21f3c;
+        height: 500px;
+        width: 100%;
+        position: absolute;
+        top: 90%;
+        z-index: 4;
     }
-    .nav-bar {
-      z-index: 99;
-      position: fixed;
-      top:0;
-      left:0;
-      width: 100%;
-      height: 40px;
-      background: #8989898f;
-      backdrop-filter: blur(20px);
-    }
-    .exp {
-      position: absolute;
-      right:0;
-      text-decoration: none;
-      cursor: crosshair;
-      color: #fff;
-      font-size: 25px;
-      font-family: satisfy;
-      margin-right: 20px;
-    }
-    .box {
-      justify-content: space-between;
-      text-align: justify;
-      text-justify: distribute;
+    @media only screen and (max-width: 700px) {
+        .head1 {
+            font-size: 100px;
+        }
     }
 </style>
 </head>
 <body>
-  <div class="nav-bar">
-    <a class="exp" href="https://uzair-ahmed5.github.io/Experiments/experiments">Check out my experiments</a>
-  </div>
-    <div class="card">
-        <h1>Uzair Ahmed</h1>
-        <p class="heading">[ Welcome ]</p>
-        <p class="sub">This is just an experimental site to see if everything is working properly. Feel free to roam around here or go check out my other experiments.</p>
-        <p class="heading">[ 나비 ]</p>
-        <div class="box1">
-        <p class="sub">옛날 옛적에 아름다운 나비가 있었습니다. 그것은 무지개의 모든 색깔을 지닌 밝은 날개를 가지고 있었습니다. 나비는 꽃에서 꽃으로 날아다니면서 꿀을 마시고 꽃가루를 뿌리는 것을 좋아했습니다.
-
-          어느 날, 나비가 숲 속을 날아가다가 거미줄에 걸렸습니다. 나비는 애쓰고 애썼지만 풀려날 수는 없었습니다.
-          
-          나비가 모든 희망이 사라졌다고 생각했을 때, 친절한 어린 소녀가 지나가고 있었습니다. 소녀는 거미줄에 갇힌 나비를 보고 안타까움을 느꼈습니다. 그녀는 거미줄에서 나비를 조심스럽게 제거하여 놓아주었습니다.
-          
-          나비는 자신의 생명을 구해준 소녀에게 너무나 감사했습니다. 그것은 날개를 퍼덕이며 날아갔고, 그 뒤에 반짝이는 먼지의 흔적을 남겼습니다.
-          
-          소녀는 날아가는 나비를 보며 미소를 지었습니다. 그녀는 그날 새로운 친구를 사귀었다는 것을 알았습니다.</p></div>
-          <p class="heading">[ Hyundai ]</p>
-          <p class="sub">현대자동차는 대한민국 서울에 본사를 둔 한국의 다국적 자동차 제조업체입니다. 1967년에 설립된 현대자동차는 2022년 기준 생산량 기준 세계 5위의 자동차 제조업체입니다. 현대자동차는 약 6,000개 대리점을 통해 전 세계 약 200개 국가 및 지역에 차량을 판매하고 있습니다.</p>
+    <div class="loader">
+        <div class="bar"><div class="loading1"></div>
+        </div> 
     </div>
-    <div id="blob"></div>
-<script>
-    const blob = document.getElementById("blob");
+    <main class='mainSection' onclick="scroll1()">
+        <img class="mainImage image1" src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(a).png?alt=media&token=696fa012-5a2a-4dad-afe7-f0801e12ca1d">
+        <img class="mainImage image2" src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(b).png?alt=media&token=ab4fb9e9-7d96-4cbe-96c1-416b3d6f4e52">
+        <img class="mainImage image3" src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(c).png?alt=media&token=9e31d72c-d146-47f5-a6dc-433c58863576">
+        <h1 class="head1">Fragments</h1>
+    </main>
+    <section class="section-2">
 
-    window.onpointermove = event => { 
-    const { clientX, clientY } = event;
-    
-    blob.animate({
-        left: `${clientX}px`,
-        top: `${clientY}px`
-    }, { duration: 1500, fill: "forwards" });
-    }
-    
+    </section>
+<script>
+    window.onscroll = function() {scrollFunction()};
+
+    const img1 = document.querySelector('.image1');
+    const img2 = document.querySelector('.image2');
+    const img3 = document.querySelector('.image3');
+    window.onload = function() {
+        setTimeout(function() {
+        document.querySelector('.loader').style.opacity = '0';
+        img1.style.transform = 'scale(1)';
+        img2.style.transform = 'scale(1)';
+        img3.style.transform = 'scale(1)';
+        img1.style.translate = '0 0';
+        img2.style.translate = '0 0';
+        img3.style.translate = '0 0';
+        document.querySelector('.mainSection').style.alignItems = 'center';
+        }, 30);
+    };
+
+    function scrollFunction() {
+          if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            img1.style.translate = '-50% 0%';
+            img2.style.translate = '50% 0%';
+            img3.style.translate = '0 50%';
+            img3.style.opacity = '0%';
+          } else {
+            img1.style.translate = '0 0';
+            img2.style.translate = '0 0';
+            img3.style.translate = '0 0';
+            img3.style.opacity = '100%';
+          }
+        }
 </script>
 </body>
 </html>

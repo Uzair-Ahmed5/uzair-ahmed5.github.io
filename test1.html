@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8"
-/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Carrois+Gothic+SC&family=Charm:wght@400;700&family=Henny+Penny&family=Indie+Flower&family=Lobster&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Sofia&display=swap" rel="stylesheet">
-<title>102</title>
-<link rel="icon" type="image/png" href="https://pngimg.com/uploads/google/google_PNG19635.png"/>
-<style>
-    body {
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      charset="UTF-8"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Carrois+Gothic+SC&family=Charm:wght@400;700&family=Henny+Penny&family=Indie+Flower&family=Lobster&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Sofia&display=swap"
+      rel="stylesheet"
+    />
+    <title>102</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://pngimg.com/uploads/google/google_PNG19635.png"
+    />
+    <style>
+      body {
         background: #f0ebe3;
         height: 100%;
         width: 100%;
         padding: 0;
         margin: 0;
         overflow-x: hidden;
-    }
-    .loader {
+      }
+      .loader {
         background: #f0ebe3;
         position: fixed;
         top: 50%;
@@ -31,34 +41,35 @@
         align-items: center;
         transition: all 0.5s ease;
         z-index: 999;
-    }
-    .loader .bar {
+      }
+      .loader .bar {
         height: 10px;
         background: #bcbcbc;
-        width: 100%;
+        width: 100vw;
         max-width: 300px;
-        min-width: 200px;
+        min-width: 100px;
         margin: 0;
         padding: 0;
         border-radius: 50px;
         overflow: hidden;
         box-shadow: 5px 5px 10px -4px #111111;
-    }
-    .bar .loading1 {
+      }
+      .bar .loading1 {
         background: #000000;
         width: 100%;
         height: 100%;
         animation: move1 6s ease-in-out 0.5s 1;
         border-radius: 50px;
-    }
-    @keyframes move1 {
+      }
+      @keyframes move1 {
         0% {
-            width: 0%;
-        } 100% {
-            width: 100%;
+          width: 0%;
         }
-    }
-    main {
+        100% {
+          width: 100%;
+        }
+      }
+      main {
         height: 100%;
         width: 100%;
         position: fixed;
@@ -68,95 +79,112 @@
         justify-content: center;
         align-items: center;
         z-index: 1;
-    }
-    .head1 {
+      }
+      .head1 {
         font-family: Charm, sans-serif;
         font-size: 150px;
         color: #800000;
-    }
-    .mainImage {
+      }
+      .mainImage {
         position: fixed;
         height: 400px;
         width: auto;
         opacity: 100%;
         transform: scale(2);
-    }
-    .image1 {
+      }
+      .image1 {
         z-index: 3;
-        translate: -50% 0 ;
+        translate: -50% 0;
         transition: all 4s ease;
-    }
-    .image2 {
+      }
+      .image2 {
         z-index: 2;
         translate: 50% 0;
         transition: all 3s ease;
-    }
-    .image3 {
+      }
+      .image3 {
         translate: 0 50%;
         z-index: 1;
         transition: all 3s ease;
-    }
-    .section-2 {
+      }
+      .section-2 {
         background: #d21f3c;
         height: 500px;
         width: 100%;
         position: absolute;
         top: 90%;
         z-index: 4;
-    }
-    @media only screen and (max-width: 700px) {
+      }
+      @media only screen and (max-width: 600px) {
         .head1 {
-            font-size: 100px;
+          font-size: 80px;
         }
-    }
-</style>
-</head>
-<body>
+        .bar {
+          width: 100px;
+        }
+        .mainImage {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <div class="loader">
-        <div class="bar"><div class="loading1"></div>
-        </div> 
+      <div class="bar"><div class="loading1"></div></div>
     </div>
-    <main class='mainSection' onclick="scroll1()">
-        <img class="mainImage image1" src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(a).png?alt=media&token=696fa012-5a2a-4dad-afe7-f0801e12ca1d">
-        <img class="mainImage image2" src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(b).png?alt=media&token=ab4fb9e9-7d96-4cbe-96c1-416b3d6f4e52">
-        <img class="mainImage image3" src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(c).png?alt=media&token=9e31d72c-d146-47f5-a6dc-433c58863576">
-        <h1 class="head1">Fragments</h1>
+    <main class="mainSection" onclick="scroll1()">
+      <img
+        class="mainImage image1"
+        src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(a).png?alt=media&token=696fa012-5a2a-4dad-afe7-f0801e12ca1d"
+      />
+      <img
+        class="mainImage image2"
+        src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(b).png?alt=media&token=ab4fb9e9-7d96-4cbe-96c1-416b3d6f4e52"
+      />
+      <img
+        class="mainImage image3"
+        src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(c).png?alt=media&token=9e31d72c-d146-47f5-a6dc-433c58863576"
+      />
+      <h1 class="head1">Fragments</h1>
     </main>
-    <section class="section-2">
+    <section class="section-2"></section>
+    <script>
+      window.onscroll = function () {
+        scrollFunction();
+      };
 
-    </section>
-<script>
-    window.onscroll = function() {scrollFunction()};
-
-    const img1 = document.querySelector('.image1');
-    const img2 = document.querySelector('.image2');
-    const img3 = document.querySelector('.image3');
-    window.onload = function() {
-        setTimeout(function() {
-        document.querySelector('.loader').style.opacity = '0';
-        img1.style.transform = 'scale(1)';
-        img2.style.transform = 'scale(1)';
-        img3.style.transform = 'scale(1)';
-        img1.style.translate = '0 0';
-        img2.style.translate = '0 0';
-        img3.style.translate = '0 0';
-        document.querySelector('.mainSection').style.alignItems = 'center';
+      const img1 = document.querySelector(".image1");
+      const img2 = document.querySelector(".image2");
+      const img3 = document.querySelector(".image3");
+      window.onload = function () {
+        setTimeout(function () {
+          document.querySelector(".loader").style.opacity = "0";
+          img1.style.transform = "scale(1)";
+          img2.style.transform = "scale(1)";
+          img3.style.transform = "scale(1)";
+          img1.style.translate = "0 0";
+          img2.style.translate = "0 0";
+          img3.style.translate = "0 0";
+          document.querySelector(".mainSection").style.alignItems = "center";
         }, 30);
-    };
+      };
 
-    function scrollFunction() {
-          if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-            img1.style.translate = '-50% 0%';
-            img2.style.translate = '50% 0%';
-            img3.style.translate = '0 50%';
-            img3.style.opacity = '0%';
-          } else {
-            img1.style.translate = '0 0';
-            img2.style.translate = '0 0';
-            img3.style.translate = '0 0';
-            img3.style.opacity = '100%';
-          }
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 80 ||
+          document.documentElement.scrollTop > 80
+        ) {
+          img1.style.translate = "-50% 0%";
+          img2.style.translate = "50% 0%";
+          img3.style.translate = "0 50%";
+          img3.style.opacity = "0%";
+        } else {
+          img1.style.translate = "0 0";
+          img2.style.translate = "0 0";
+          img3.style.translate = "0 0";
+          img3.style.opacity = "100%";
         }
-</script>
-</body>
+      }
+    </script>
+  </body>
 </html>

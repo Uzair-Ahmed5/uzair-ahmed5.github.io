@@ -21,6 +21,7 @@
     />
     <style>
       * {
+        /* The asterisk sign tells the browser to select all elements in the document. EVERY TAG GETS SELECTED */
         cursor: crosshair;
       }
       body {
@@ -65,6 +66,7 @@
         animation: move1 6s ease-in-out 0.5s 1;
         border-radius: 50px;
       }
+      /* The loading animation */
       @keyframes move1 {
         0% {
           width: 0%;
@@ -297,6 +299,7 @@
         setTimeout(function () {
           document.querySelector(".loader").style.opacity = "0";
           document.querySelector(".loader").style.zIndex = "99";
+          document.querySelector("#blob").style.zIndex = "98";
           img1.style.transform = "scale(1)";
           img2.style.transform = "scale(1)";
           img3.style.transform = "scale(1)";

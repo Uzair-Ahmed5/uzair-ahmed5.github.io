@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,6 +20,9 @@
       href="https://pngimg.com/uploads/google/google_PNG19635.png"
     />
     <style>
+      * {
+        cursor: crosshair;
+      }
       body {
         background: #f0ebe3;
         height: 100%;
@@ -27,7 +31,6 @@
         margin: 0;
         overflow-x: hidden;
       }
-      /* This is styling for the loading animation at the start  */
       .loader {
         background: #f0ebe3;
         position: fixed;
@@ -70,7 +73,6 @@
           width: 100%;
         }
       }
-      /* End of loading animation styling */
       main {
         height: 100%;
         width: 100%;
@@ -82,13 +84,11 @@
         align-items: center;
         z-index: 1;
       }
-      /* Background text conatiner */
       .head1 {
         font-family: Charm, sans-serif;
         font-size: 150px;
         color: #800000;
       }
-      /* all image container */
       .mainImage {
         position: fixed;
         height: 400px;
@@ -111,14 +111,39 @@
         z-index: 1;
         transition: all 3s ease;
       }
-      /* The red section below the main section */
       .section-2 {
         background: #d21f3c;
-        height: 500px;
+        height: auto;
         width: 100%;
         position: absolute;
         top: 90%;
         z-index: 4;
+        padding: 20px;
+      }
+      /* For the circle around cursor */
+      #blob {
+          height: 50px;
+          width: 50px;
+          position: fixed;
+          translate: -50% -50%;
+          border-radius: 50%;
+          background: #d21f3c99;
+          backdrop-filter: invert(100%);
+          opacity: 1;
+          z-index: 999;
+          animation: spin 2s steps(120) infinite alternate-reverse;
+      }
+      /* This is not doing anything right now but is useful for understanding the animation objects */
+      @keyframes spin {
+          0% {
+              transform: rotate(0);
+          }
+          50% {
+              transform: rotate(180deg);
+          }
+          100% {
+              transform: rotate(360deg);
+          }
       }
       /* This is for making the page responsive. To make it look better on smaller screens*/
       @media only screen and (max-width: 600px) {
@@ -132,7 +157,6 @@
           height: 250px;
         }
       }
-      /* The top section of the page, where the menu stuff is kept */
       header {
         position: fixed;
         top: 0;
@@ -143,15 +167,13 @@
         z-index: 999;
         box-shadow:  2px 2px 10px -2px #4e4e4e;
       }
-      /* un-ordered list of items */
       ul {
         list-style-type: none;
-      /* This tells the browser to only change the style of the list element within ul */
+      }
       ul li {
         display: inline-flex;
         height: 50px;
       }
-      /* Similarly, this tells the browser to change only the anchor "a" Elements within li of ul */
       ul li a {
         color: #f0ebe3;
         font-size: 30px;
@@ -159,26 +181,51 @@
         padding: 0 10px;
         transition: all 1s ease;
       }
-      /* This is for the hover effect */
       a:hover {
         color: #333333;
         background-color: #f0ebe3;
       }
-      /* The number in the nth-child brackets tells the browser which element it is. Counting top-down. */
       li:nth-child(1) {
         border-bottom: 5px solid #f0ebe3;
       }
       li:nth-child(2) {
         border-top: 5px solid #f0ebe3;
       }
-      li:nth-child(3) {
-        border-bottom: 5px solid #ba2fff;
-      }
-      li:nth-child(4) {
-        border-top: 5px solid #ba2fff;
-      }
       li:nth-child(5) {
-        border-bottom: 5px solid #ffc05b;
+        border-right: 5px solid #f0ebe3;
+      }
+      /* Similarly you can put any number and it will change that item in the list */
+      .text-container {
+        font-size: 20px;
+        color: #f0ebe3;
+      }
+      p {
+        color: #f0ebe3;
+        font-weight: lighter;
+      }
+      p:nth-child(2n) {
+        /* This only selects the odd numbered p objects. It is counting from the heading element. Thats why its not selecting the 2nd paragraph. if you remove the heading tag. Then it applies the styling to even numbered paragraphs*/
+        font-weight: bolder;
+        font-family: cursive;
+        text-align: center;
+      }
+      .list-contain {
+        margin: 10px 0 0 0;
+        color: #f0ebe3;
+      }
+      .list-contain li {
+        font-weight: bold;
+        border: none;
+        padding: 5px 0;
+        font-size: 20px;
+        list-style-type: circle;
+        list-style-position: inside;
+      }
+      .list-contain li:nth-of-type(2n+1){
+        /* This selects the odd numbered li objects. Because It is only applying 2n+1 to "li" type items, skipping the h3 tag*/
+        list-style-type: square;
+        list-style-position: inside;
+        color: violet;
       }
     </style>
   </head>
@@ -198,13 +245,20 @@
       <div class="bar"><div class="loading1"></div></div>
     </div>
     <main class="mainSection" onclick="scroll1()">
+      <!--
+        These are the links to the images. You can change them in the <img> tag
+        https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(a).png?alt=media&token=696fa012-5a2a-4dad-afe7-f0801e12ca1d
+        https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(b).png?alt=media&token=ab4fb9e9-7d96-4cbe-96c1-416b3d6f4e52
+        https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(c).png?alt=media&token=9e31d72c-d146-47f5-a6dc-433c58863576
+      -->
       <img
         class="mainImage image1"
         src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(a).png?alt=media&token=696fa012-5a2a-4dad-afe7-f0801e12ca1d"
       />
       <img
         class="mainImage image2"
-        src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(b).png?alt=media&token=ab4fb9e9-7d96-4cbe-96c1-416b3d6f4e52"
+        src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(b).png?alt=media&token=ab4fb9e9-7d96-4cbe-96c1-416b3d6f4e52
+        "
       />
       <img
         class="mainImage image3"
@@ -212,8 +266,25 @@
       />
       <h1 class="head1">Fragments</h1>
     </main>
-    <section class="section-2"></section>
+    <section class="section-2">
+      <div class="text-container">
+        <h3>All the Odd numbered paragraphs will be bold and centered</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus ea quia accusantium aperiam voluptas molestiae voluptatibus reprehenderit expedita aliquid aspernatur iure officiis soluta suscipit, cumque odit at ratione iste unde saepe et! Hic nostrum corrupti delectus, vel alias velit animi sed corporis iusto praesentium facilis? Totam necessitatibus ducimus corporis?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus ea quia accusantium aperiam voluptas molestiae voluptatibus reprehenderit expedita aliquid aspernatur iure officiis soluta suscipit, cumque odit at ratione iste unde saepe et! Hic nostrum corrupti delectus, vel alias velit animi sed corporis iusto praesentium facilis? Totam necessitatibus ducimus corporis?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus ea quia accusantium aperiam voluptas molestiae voluptatibus reprehenderit expedita aliquid aspernatur iure officiis soluta suscipit, cumque odit at ratione iste unde saepe et! Hic nostrum corrupti delectus, vel alias velit animi sed corporis iusto praesentium facilis? Totam necessitatibus ducimus corporis?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus ea quia accusantium aperiam voluptas molestiae voluptatibus reprehenderit expedita aliquid aspernatur iure officiis soluta suscipit, cumque odit at ratione iste unde saepe et! Hic nostrum corrupti delectus, vel alias velit animi sed corporis iusto praesentium facilis? Totam necessitatibus ducimus corporis?</p>
+      </div>
+      <div class="list-contain">
+        <h3>Odd numbered list items will be colored purple</h3>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+        <li>Five</li>
+      </div>
+    </section>
 
+    <div id="blob"></div>
     <script>
       window.onscroll = function () {
         scrollFunction();
@@ -251,6 +322,17 @@
           img3.style.translate = "0 0";
           img3.style.opacity = "100%";
         }
+      }
+      
+      const blob = document.getElementById("blob");
+
+      window.onpointermove = event => { 
+          const { clientX, clientY } = event;
+
+          blob.animate({
+              left: `${clientX}px`,
+              top: `${clientY}px`
+          }, { duration: 1500, fill: "forwards" });
       }
     </script>
   </body>

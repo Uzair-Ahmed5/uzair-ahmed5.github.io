@@ -30,7 +30,7 @@
         width: 100%;
         padding: 0;
         margin: 0;
-        overflow-x: hidden;
+        /* Write x-overflow: hidden if you want to hide the objects overflowing out of screen (horizontally) */
       }
       .loader {
         background: #f0ebe3;
@@ -76,6 +76,7 @@
         }
       }
       main {
+        /* The container for the background text */
         height: 100%;
         width: 100%;
         position: fixed;
@@ -87,11 +88,13 @@
         z-index: 1;
       }
       .head1 {
+        /* Background text fprmatting */
         font-family: Charm, sans-serif;
         font-size: 150px;
         color: #800000;
       }
       .mainImage {
+        /* Container for all images */
         position: fixed;
         height: 400px;
         width: auto;
@@ -117,10 +120,12 @@
         background: #d21f3c;
         height: auto;
         width: 100%;
+        display: inline;
         position: absolute;
         top: 90%;
+        left: 0;
         z-index: 4;
-        padding: 20px;
+        margin: 0;
       }
       /* For the circle around cursor */
       #blob {
@@ -159,6 +164,7 @@
           height: 250px;
         }
       }
+      /* The top bar styling is below */
       header {
         position: fixed;
         top: 0;
@@ -166,17 +172,22 @@
         background-color: #d21f3c;
         height: 100px;
         width: 100%;
+        padding: 0;
+        margin: 0;
         z-index: 999;
         box-shadow:  2px 2px 10px -2px #4e4e4e;
       }
       ul {
+        /* Un-ordered list */
         list-style-type: none;
       }
       ul li {
+        /* li of ul is selected. No other li tag putside ul would be affected */
         display: inline-flex;
         height: 50px;
       }
       ul li a {
+        /* Similarly, anchor inside li is selected */
         color: #f0ebe3;
         font-size: 30px;
         text-decoration: none;
@@ -184,6 +195,7 @@
         transition: all 1s ease;
       }
       a:hover {
+        /* For hover effect */
         color: #333333;
         background-color: #f0ebe3;
       }
@@ -200,6 +212,13 @@
       .text-container {
         font-size: 20px;
         color: #f0ebe3;
+        width: 100%;
+        margin: 20px;
+        display: inline;
+      }
+      .text-container * {
+        /* Selects all elements in this div and adds padding of 20px */
+        padding: 20px;
       }
       p {
         color: #f0ebe3;
@@ -212,13 +231,15 @@
         text-align: center;
       }
       .list-contain {
-        margin: 10px 0 0 0;
+        /* The container div for list in section2 */
         color: #f0ebe3;
+      }
+      .list-contain * {
+        padding: 0 20px;
       }
       .list-contain li {
         font-weight: bold;
         border: none;
-        padding: 5px 0;
         font-size: 20px;
         list-style-type: circle;
         list-style-position: inside;
@@ -255,16 +276,15 @@
       -->
       <img
         class="mainImage image1"
-        src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(a).png?alt=media&token=696fa012-5a2a-4dad-afe7-f0801e12ca1d"
+        src="art101(a).png"
       />
       <img
         class="mainImage image2"
-        src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(b).png?alt=media&token=ab4fb9e9-7d96-4cbe-96c1-416b3d6f4e52
-        "
+        src="art101(b).png"
       />
       <img
         class="mainImage image3"
-        src="https://firebasestorage.googleapis.com/v0/b/login-form101.appspot.com/o/assets%2Fart101(c).png?alt=media&token=9e31d72c-d146-47f5-a6dc-433c58863576"
+        src="art101(c).png"
       />
       <h1 class="head1">Fragments</h1>
     </main>

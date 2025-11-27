@@ -27,6 +27,7 @@
         margin: 0;
         overflow-x: hidden;
       }
+      /* This is styling for the loading animation at the start  */
       .loader {
         background: #f0ebe3;
         position: fixed;
@@ -69,6 +70,7 @@
           width: 100%;
         }
       }
+      /* End of loading animation styling */
       main {
         height: 100%;
         width: 100%;
@@ -80,11 +82,13 @@
         align-items: center;
         z-index: 1;
       }
+      /* Background text conatiner */
       .head1 {
         font-family: Charm, sans-serif;
         font-size: 150px;
         color: #800000;
       }
+      /* all image container */
       .mainImage {
         position: fixed;
         height: 400px;
@@ -107,6 +111,7 @@
         z-index: 1;
         transition: all 3s ease;
       }
+      /* The red section below the main section */
       .section-2 {
         background: #d21f3c;
         height: 500px;
@@ -127,6 +132,7 @@
           height: 250px;
         }
       }
+      /* The top section of the page, where the menu stuff is kept */
       header {
         position: fixed;
         top: 0;
@@ -137,13 +143,15 @@
         z-index: 999;
         box-shadow:  2px 2px 10px -2px #4e4e4e;
       }
+      /* un-ordered list of items */
       ul {
         list-style-type: none;
-      }
+      /* This tells the browser to only change the style of the list element within ul */
       ul li {
         display: inline-flex;
         height: 50px;
       }
+      /* Similarly, this tells the browser to change only the anchor "a" Elements within li of ul */
       ul li a {
         color: #f0ebe3;
         font-size: 30px;
@@ -151,10 +159,12 @@
         padding: 0 10px;
         transition: all 1s ease;
       }
+      /* This is for the hover effect */
       a:hover {
         color: #333333;
         background-color: #f0ebe3;
       }
+      /* The number in the nth-child brackets tells the browser which element it is. Counting top-down. */
       li:nth-child(1) {
         border-bottom: 5px solid #f0ebe3;
       }

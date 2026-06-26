@@ -1,0 +1,135 @@
+:root {
+    --primary-color: #00b894;
+    --primary-dark: #00a884;
+    --secondary-color: #2d3436;
+    --accent-color: #fdcb6e;
+    --text-dark: #2d3436;
+    --text-light: #636e72;
+    --white: #ffffff;
+    --light-bg: #f5f6fa;
+    --shadow: 0 10px 30px #0000001a;
+    --shadow-hover: 0 20px 40px #00000026;
+    --transition: all 0.3s ease;
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: var(--white);
+    padding-top: 80px;
+}
+
+.navbar {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    padding: 10px 0;
+    min-height: 80px;
+    transition: var(--transition);
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-container .logo {
+    color: var(--secondary-color);
+    font-size: 26px;
+    font-family: var(--font-secondary);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.logo-container .logo span {
+    color: var(--primary-dark);
+}
+
+.logo-container p {
+    margin: 0;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.anchor-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 991.98px) {
+    .anchor-container {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 15px;
+        padding: 10px 0;
+    }
+    .anchor-container button {
+        width: 100% !important;
+    }
+}
+
+.anchor-container a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-dark);
+    position: relative;
+    text-decoration: none;
+}
+
+.anchor-container a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.anchor-container a:hover::after,
+.anchor-container a.active::after {
+    width: 100%;
+}
+
+.anchor-container a.active {
+    color: var(--primary-color);
+}
+
+.anchor-container button {
+    height: 45px;
+    width: 130px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border-radius: 50px;
+    transition: var(--transition);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border: none;
+}
+
+.anchor-container button:hover {
+    background-color: var(--primary-color);
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}

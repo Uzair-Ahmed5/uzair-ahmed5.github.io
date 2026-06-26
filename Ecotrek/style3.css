@@ -1,0 +1,239 @@
+:root {
+    --card-bg: #ffffff;
+    --text-main: #57CC99FF;
+    --text-muted: #6c757d;
+    --tag-bg: #f8f9fa;
+    --btn-bg: #57CC99FF;
+    --btn-hover: #1a252f;
+    --badge-bg: #111424;
+    --bottom-line-color: #57CC99FF;
+    
+    --transition-curve: cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-card: transform 0.4s var(--transition-curve), box-shadow 0.4s var(--transition-curve);
+    --transition-zoom: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --shadow-normal: 0 10px 30px #0000000d;
+    --shadow-hover: 0 20px 40px #0000001f;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: 80px 0;
+    }
+}
+
+.section-title {
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 42px;
+    }
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 600px;
+    text-align: justify;
+}
+
+.info-section {
+    padding: 20px;
+}
+
+.vehicles {
+    padding: 20px 20px;
+}
+
+.filter-container {
+    margin-top: -20px;
+}
+
+.btn-filter {
+    background-color: #ffffff;
+    color: var(--text-main);
+    border: 1px solid #e2e8f0;
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s var(--transition-curve);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.btn-filter:hover, .btn-filter.active {
+    background-color: var(--text-main);
+    color: #ffffff;
+    border-color: var(--text-main);
+}
+
+.card {
+    position: relative;
+    background-color: var(--card-bg);
+    width: 100%;
+    border: none;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: var(--shadow-normal);
+    transition: var(--transition-card);
+    will-change: transform, box-shadow; 
+}
+
+.card::after {
+    content: ""; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--bottom-line-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s var(--transition-curve);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card:hover::after {
+    transform: scaleX(1);
+}
+
+.card-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--badge-bg);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.card-img-wrap {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-zoom);
+    will-change: transform;
+}
+
+.card:hover .card-img {
+    transform: scale(1.08);
+}
+
+.card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 14px;
+}
+
+.card-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.spec-item {
+    background-color: var(--tag-bg);
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.spec-item i {
+    color: #38A3A5FF;
+    font-size: 12px;
+}
+
+.card-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card-price-box {
+    display: flex;
+    align-items: baseline;
+    margin-top: auto;
+    margin-bottom: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.price-currency {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-right: 6px;
+}
+
+.price-amount {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.price-period {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-left: 4px;
+}
+
+.card-btn {
+    width: 100%;
+    background-color: var(--btn-bg);
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.card-btn:hover {
+    background-color: var(--btn-hover);
+}

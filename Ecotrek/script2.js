@@ -1,7 +1,9 @@
-const bookingButtons = document.querySelectorAll(".card-btn");
+document.addEventListener("DOMContentLoaded", () => {
+    const bookingButtons = document.querySelectorAll(".card-btn");
 
-bookingButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        window.location.href = "index.html";
+    bookingButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            window.location.href = "/contact";
+        });
     });
 });

@@ -12,6 +12,17 @@
     background-size: cover;
 }
 
+/* Mobile responsive fix for full size layout visibility */
+@media (max-width: 767.98px) {
+    .hero .main-bg {
+        background-attachment: scroll !important; /* Fixes critical rendering zoom bugs on iOS/Android */
+        background-size: contain !important;      /* Forces the entire uncropped image to be visible */
+        height: auto !important;                  /* Releases fixed height blocks */
+        aspect-ratio: 16 / 9;                     /* Keeps fluid proportional layout box standard */
+        min-height: auto !important;
+    }
+}
+
 .hero .info-bar {
     background-color: #00a884;
     padding: 20px 0;
@@ -556,6 +567,7 @@
     color: var(--primary-color) !important;
     padding-left: 4px;
 }
+
 .footer i {
     color: var(--primary-color) !important;
 }
